@@ -7,8 +7,7 @@
 //
 
 #import "DPAppDelegate.h"
-
-#import "DPViewController.h"
+#import "DPSlideyViewController.h"
 
 @implementation DPAppDelegate
 
@@ -17,9 +16,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.viewController = [[DPViewController alloc] initWithNibName:@"DPViewController_iPhone" bundle:nil];
+        self.viewController = [[DPSlideyViewController alloc] initWithNibName:@"DPSlideyViewController_iPhone" bundle:nil];
     } else {
-        self.viewController = [[DPViewController alloc] initWithNibName:@"DPViewController_iPad" bundle:nil];
+        self.viewController = [[DPSlideyViewController alloc] initWithNibName:@"DPSlideyViewController_iPad" bundle:nil];
     }
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];

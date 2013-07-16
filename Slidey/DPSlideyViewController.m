@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 DP. All rights reserved.
 //
 
-#import "DPViewController.h"
+#import "DPSlideyViewController.h"
 
-@interface DPViewController ()
+@interface DPSlideyViewController ()
 
 @end
 
-@implementation DPViewController
+@implementation DPSlideyViewController
 
 - (void)viewDidLoad
 {

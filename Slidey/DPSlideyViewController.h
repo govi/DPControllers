@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DPViewController : UIViewController
+@interface DPSlideyViewController : UIViewController
 
 @end
