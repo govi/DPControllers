@@ -18,9 +18,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.delegate = self;
     self.numberOfPages = 4;
 	// Do any additional setup after loading the view, typically from a nib.
-    //self.pagingScrollView.contentSize = CGSizeMake(self.pagingScrollView.frame.size.width * self.numberOfPages, self.pagingScrollView.frame.size.height);
     
     UIView* contentView = ((UIViewController *)[self viewControllerForPage:0]).view;
     contentView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
@@ -51,8 +51,8 @@
         tovc.view.frame = fromvc.view.frame;
         tovc.view.center = CGPointMake(3*fromvc.view.center.x*(to-from), fromvc.view.center.y);
         
-        ((DPContentViewController *)fromvc).label.text = [NSString stringWithFormat:@"%d", from];
-        ((DPContentViewController *)tovc).label.text = [NSString stringWithFormat:@"%d", to];
+        if(self.delegate && [self.delegate respondsToSelector:@selector(slideyController:willTransitionFrom:viewController:to:viewController:)])
+            [self.delegate slideyController:self willTransitionFrom:(NSInteger)from viewController:fromvc to:(NSInteger)to viewController:tovc];
         
         [self transitionFromViewController:fromvc toViewController:tovc duration:0.4 options:UIViewAnimationOptionTransitionNone animations:^{
             float tmp = fromvc.view.center.x;
@@ -60,6 +60,8 @@
             tovc.view.center = CGPointMake(tmp, fromvc.view.center.y);
         } completion:^(BOOL finished) {
             self.currentPage = to;
+            if(self.delegate && [self.delegate respondsToSelector:@selector(slideyController:didTransitionFrom:viewController:to:viewController:)])
+                [self.delegate slideyController:self didTransitionFrom:from viewController:fromvc to:to viewController:tovc];
         }];
     }
 }
@@ -79,9 +81,10 @@
     if(page < [self.childViewControllers count]) {
         return self.childViewControllers[page];
     } else {
-        DPContentViewController *vc = [[DPContentViewController alloc] init];
-        [self addChildViewController:vc];
-        return vc;
+        if (_delegate && [_delegate respondsToSelector:@selector(slideyController:viewControllerForPage:)]) {
+            return [_delegate slideyController:self viewControllerForPage:page];
+        }
+        return nil;
     }
 }
 
@@ -89,6 +92,17 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)slideyController:(DPSlideyViewController *)slidey willTransitionFrom:(NSInteger)from viewController:(UIViewController *)fromvc to:(NSInteger)to viewController:(UIViewController *)tovc {
+    ((DPContentViewController *)fromvc).label.text = [NSString stringWithFormat:@"%d", from];
+    ((DPContentViewController *)tovc).label.text = [NSString stringWithFormat:@"%d", to];
+}
+
+-(UIViewController *)slideyController:(DPSlideyViewController *)slidey viewControllerForPage:(NSInteger)page {
+    DPContentViewController *vc = [[DPContentViewController alloc] init];
+    [self addChildViewController:vc];
+    return vc;
 }
 
 @end
