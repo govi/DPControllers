@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DPSlideyViewController : UIViewController
+@interface DPSlideyViewController : UIViewController <UIScrollViewDelegate>
+
+@property (nonatomic) int numberOfPages;
+@property (nonatomic) float startOffset;
+@property (nonatomic) int currentPage;
 
 @end
