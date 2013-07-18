@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DPScrollableView.h"
 
 @class DPSlideyViewController;
 
@@ -19,11 +20,14 @@
 
 @end
 
-@interface DPSlideyViewController : UIViewController <UIScrollViewDelegate, DPSlideyViewControllerDelegate>
+@interface DPSlideyViewController : UIViewController <UIScrollViewDelegate, DPSlideyViewControllerDelegate, DPScrollableViewDatasource> {
+    BOOL swiping;
+}
 
 @property (nonatomic) int numberOfPages;
 @property (nonatomic) float startOffset;
 @property (nonatomic) int currentPage;
 @property (nonatomic, weak) id<DPSlideyViewControllerDelegate> delegate;
+@property (nonatomic, strong) DPScrollableView *scrollableView;
 
 @end

@@ -17,9 +17,11 @@
 		974BF7941795A68300391886 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 974BF7931795A68300391886 /* Default@2x.png */; };
 		974BF7961795A68300391886 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 974BF7951795A68300391886 /* Default-568h@2x.png */; };
 		974BF7991795A68300391886 /* DPSlideyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 974BF7981795A68300391886 /* DPSlideyViewController.m */; };
-		974BF79C1795A68300391886 /* DPSlideyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 974BF79A1795A68300391886 /* DPSlideyViewController.xib */; };
 		974BF7A81795AA2500391886 /* DPContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 974BF7A61795AA2400391886 /* DPContentViewController.m */; };
 		974BF7A91795AA2500391886 /* DPContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 974BF7A71795AA2400391886 /* DPContentViewController.xib */; };
+		9753874F1796C699002581B1 /* DPScrollableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9753874C1796C699002581B1 /* DPScrollableView.m */; };
+		975387501796C699002581B1 /* DPScrollableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9753874E1796C699002581B1 /* DPScrollableViewCell.m */; };
+		975387531796C704002581B1 /* NSString+UI.m in Sources */ = {isa = PBXBuildFile; fileRef = 975387521796C704002581B1 /* NSString+UI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,10 +40,15 @@
 		974BF7951795A68300391886 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		974BF7971795A68300391886 /* DPSlideyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DPSlideyViewController.h; sourceTree = "<group>"; };
 		974BF7981795A68300391886 /* DPSlideyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DPSlideyViewController.m; sourceTree = "<group>"; };
-		974BF79B1795A68300391886 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DPSlideyViewController.xib; sourceTree = "<group>"; };
 		974BF7A51795AA2400391886 /* DPContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPContentViewController.h; sourceTree = "<group>"; };
 		974BF7A61795AA2400391886 /* DPContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPContentViewController.m; sourceTree = "<group>"; };
 		974BF7A71795AA2400391886 /* DPContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPContentViewController.xib; sourceTree = "<group>"; };
+		9753874B1796C699002581B1 /* DPScrollableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPScrollableView.h; sourceTree = "<group>"; };
+		9753874C1796C699002581B1 /* DPScrollableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPScrollableView.m; sourceTree = "<group>"; };
+		9753874D1796C699002581B1 /* DPScrollableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPScrollableViewCell.h; sourceTree = "<group>"; };
+		9753874E1796C699002581B1 /* DPScrollableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPScrollableViewCell.m; sourceTree = "<group>"; };
+		975387511796C704002581B1 /* NSString+UI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UI.h"; sourceTree = "<group>"; };
+		975387521796C704002581B1 /* NSString+UI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UI.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,11 +95,16 @@
 		974BF7851795A68300391886 /* Slidey */ = {
 			isa = PBXGroup;
 			children = (
+				975387511796C704002581B1 /* NSString+UI.h */,
+				975387521796C704002581B1 /* NSString+UI.m */,
+				9753874B1796C699002581B1 /* DPScrollableView.h */,
+				9753874C1796C699002581B1 /* DPScrollableView.m */,
+				9753874D1796C699002581B1 /* DPScrollableViewCell.h */,
+				9753874E1796C699002581B1 /* DPScrollableViewCell.m */,
 				974BF78E1795A68300391886 /* DPAppDelegate.h */,
 				974BF78F1795A68300391886 /* DPAppDelegate.m */,
 				974BF7971795A68300391886 /* DPSlideyViewController.h */,
 				974BF7981795A68300391886 /* DPSlideyViewController.m */,
-				974BF79A1795A68300391886 /* DPSlideyViewController.xib */,
 				974BF7A51795AA2400391886 /* DPContentViewController.h */,
 				974BF7A61795AA2400391886 /* DPContentViewController.m */,
 				974BF7A71795AA2400391886 /* DPContentViewController.xib */,
@@ -171,7 +183,6 @@
 				974BF7921795A68300391886 /* Default.png in Resources */,
 				974BF7941795A68300391886 /* Default@2x.png in Resources */,
 				974BF7961795A68300391886 /* Default-568h@2x.png in Resources */,
-				974BF79C1795A68300391886 /* DPSlideyViewController.xib in Resources */,
 				974BF7A91795AA2500391886 /* DPContentViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -187,6 +198,9 @@
 				974BF7901795A68300391886 /* DPAppDelegate.m in Sources */,
 				974BF7991795A68300391886 /* DPSlideyViewController.m in Sources */,
 				974BF7A81795AA2500391886 /* DPContentViewController.m in Sources */,
+				9753874F1796C699002581B1 /* DPScrollableView.m in Sources */,
+				975387501796C699002581B1 /* DPScrollableViewCell.m in Sources */,
+				975387531796C704002581B1 /* NSString+UI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,14 +213,6 @@
 				974BF7891795A68300391886 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		974BF79A1795A68300391886 /* DPSlideyViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				974BF79B1795A68300391886 /* en */,
-			);
-			name = DPSlideyViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -311,6 +317,7 @@
 				974BF7A41795A68300391886 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

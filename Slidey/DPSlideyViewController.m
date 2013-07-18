@@ -8,6 +8,7 @@
 
 #import "DPSlideyViewController.h"
 #import "DPContentViewController.h"
+#import "DPScrollableView.h"
 
 @interface DPSlideyViewController ()
 
@@ -22,8 +23,12 @@
     self.numberOfPages = 4;
 	// Do any additional setup after loading the view, typically from a nib.
     
+    _scrollableView = [[DPScrollableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 32.0)];
+    [self.view addSubview:_scrollableView];
+    _scrollableView.datasource = self;
+    
     UIView* contentView = ((UIViewController *)[self viewControllerForPage:0]).view;
-    contentView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    contentView.frame = CGRectMake(0, 32.0, self.view.frame.size.width, self.view.frame.size.height - 32.0);
     contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:contentView];
     
@@ -36,6 +41,7 @@
     [self.view addGestureRecognizer:right];
     
     self.currentPage = 0;
+     [self.scrollableView setSelectedIndex:0];
 }
 
 -(void)swiping:(UISwipeGestureRecognizer *)gesture {
@@ -44,13 +50,19 @@
     if (gesture.direction == UISwipeGestureRecognizerDirectionRight) {
         to = self.currentPage - 1;
     }
-    
+    swiping = YES;
+    [self transitionFrom:from to:to];
+}
+
+-(void)transitionFrom:(NSInteger)from to:(NSInteger)to {
     if(from != to && to < self.numberOfPages && to >= 0) {
         UIViewController *fromvc = [self viewControllerForPage:from];
         UIViewController *tovc = [self viewControllerForPage:to];
         tovc.view.frame = fromvc.view.frame;
         tovc.view.center = CGPointMake(3*fromvc.view.center.x*(to-from), fromvc.view.center.y);
-        
+        __block id<DPSlideyViewControllerDelegate> dele = self.delegate;
+        __block DPScrollableView *scView = self.scrollableView;
+        __block DPSlideyViewController *current = self;
         if(self.delegate && [self.delegate respondsToSelector:@selector(slideyController:willTransitionFrom:viewController:to:viewController:)])
             [self.delegate slideyController:self willTransitionFrom:(NSInteger)from viewController:fromvc to:(NSInteger)to viewController:tovc];
         
@@ -59,9 +71,13 @@
             fromvc.view.center = CGPointMake(3*fromvc.view.center.x*(from-to), fromvc.view.center.y);
             tovc.view.center = CGPointMake(tmp, fromvc.view.center.y);
         } completion:^(BOOL finished) {
-            self.currentPage = to;
-            if(self.delegate && [self.delegate respondsToSelector:@selector(slideyController:didTransitionFrom:viewController:to:viewController:)])
-                [self.delegate slideyController:self didTransitionFrom:from viewController:fromvc to:to viewController:tovc];
+            current.currentPage = to;
+            if(dele && [dele respondsToSelector:@selector(slideyController:didTransitionFrom:viewController:to:viewController:)])
+                [dele slideyController:self didTransitionFrom:from viewController:fromvc to:to viewController:tovc];
+            if(swiping) {
+                [scView setSelectedIndex:to];
+                swiping = NO;
+            }
         }];
     }
 }
@@ -103,6 +119,21 @@
     DPContentViewController *vc = [[DPContentViewController alloc] init];
     [self addChildViewController:vc];
     return vc;
+}
+
+-(int)numberOfCellsforScrollableView:(DPScrollableView *)view {
+    return 4;
+}
+
+-(NSString *)scrollableView:(DPScrollableView *)view getTitleForIndex:(int)i {
+    return @"Deviant";
+}
+
+-(void)scrollableView:(DPScrollableView *)view didSelectCellAtIndex:(int)index {
+    if(!swiping)
+        [self transitionFrom:self.currentPage to:index];
+    else
+        swiping = NO;
 }
 
 @end
