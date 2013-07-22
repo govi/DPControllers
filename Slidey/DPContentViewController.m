@@ -77,13 +77,20 @@
 
 -(void)updateProgressValue:(float)flt {
     progress1.progress = flt;
-    progress2.progress = progress1.progress;
-    progress4.progress = progress2.progress;
-    progress5.progress = progress2.progress;
+    progress2.progress = flt;
+    progress4.progress = flt;
+    progress5.progress = flt;
+}
+
+-(void)updateProgressRandomValue {
+    progress1.progress = (arc4random() % 10) /10.0;
+    progress2.progress = (arc4random() % 10) /10.0;
+    progress4.progress = (arc4random() % 10) /10.0;
+    progress5.progress = (arc4random() % 10) /10.0;
 }
 
 -(void)viewDidAppear:(BOOL)animated {
-    [self updateProgressValue:(arc4random() % 10) /10.0];
+    [self updateProgressRandomValue];
 }
 
 - (void)didReceiveMemoryWarning

@@ -124,7 +124,7 @@
     float resolution = self.frame.size.width / self.numberOfSections;
     float x = resolution;
     for(int i=0;i<self.numberOfSections;i++) {
-        CGContextStrokeRect(c, CGRectMake(x, 0, 1.0, self.frame.size.height));
+        CGContextStrokeRect(c, CGRectMake(x, 0, 0.5, self.frame.size.height));
         x += resolution;
     }
     CGContextRestoreGState(c);
