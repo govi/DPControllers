@@ -11,7 +11,6 @@
 		974BF7821795A68300391886 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 974BF7811795A68300391886 /* Foundation.framework */; };
 		974BF7841795A68300391886 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 974BF7831795A68300391886 /* CoreGraphics.framework */; };
 		974BF78A1795A68300391886 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 974BF7881795A68300391886 /* InfoPlist.strings */; };
-		974BF78C1795A68300391886 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 974BF78B1795A68300391886 /* main.m */; };
 		974BF7901795A68300391886 /* DPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 974BF78F1795A68300391886 /* DPAppDelegate.m */; };
 		974BF7921795A68300391886 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 974BF7911795A68300391886 /* Default.png */; };
 		974BF7941795A68300391886 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 974BF7931795A68300391886 /* Default@2x.png */; };
@@ -25,6 +24,7 @@
 		97AA7548179D337400AFC87E /* DPNiftyProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 97AA7547179D337400AFC87E /* DPNiftyProgressBar.m */; };
 		97AA754B179D414B00AFC87E /* UIColor+GradientOffset.m in Sources */ = {isa = PBXBuildFile; fileRef = 97AA754A179D414B00AFC87E /* UIColor+GradientOffset.m */; };
 		97AA754D179D7F5C00AFC87E /* Slidey.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 97AA754C179D7F5C00AFC87E /* Slidey.podspec */; };
+		97AA754F179D8E5C00AFC87E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97AA754E179D8E5C00AFC87E /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +34,6 @@
 		974BF7831795A68300391886 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		974BF7871795A68300391886 /* Slidey-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Slidey-Info.plist"; sourceTree = "<group>"; };
 		974BF7891795A68300391886 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		974BF78B1795A68300391886 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		974BF78D1795A68300391886 /* Slidey-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Slidey-Prefix.pch"; sourceTree = "<group>"; };
 		974BF78E1795A68300391886 /* DPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DPAppDelegate.h; sourceTree = "<group>"; };
 		974BF78F1795A68300391886 /* DPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DPAppDelegate.m; sourceTree = "<group>"; };
@@ -57,6 +56,7 @@
 		97AA7549179D414B00AFC87E /* UIColor+GradientOffset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+GradientOffset.h"; sourceTree = "<group>"; };
 		97AA754A179D414B00AFC87E /* UIColor+GradientOffset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+GradientOffset.m"; sourceTree = "<group>"; };
 		97AA754C179D7F5C00AFC87E /* Slidey.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Slidey.podspec; sourceTree = SOURCE_ROOT; };
+		97AA754E179D8E5C00AFC87E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,9 +129,9 @@
 		974BF7861795A68300391886 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				97AA754E179D8E5C00AFC87E /* main.m */,
 				974BF7871795A68300391886 /* Slidey-Info.plist */,
 				974BF7881795A68300391886 /* InfoPlist.strings */,
-				974BF78B1795A68300391886 /* main.m */,
 				974BF78D1795A68300391886 /* Slidey-Prefix.pch */,
 				974BF7911795A68300391886 /* Default.png */,
 				974BF7931795A68300391886 /* Default@2x.png */,
@@ -208,7 +208,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				974BF78C1795A68300391886 /* main.m in Sources */,
 				974BF7901795A68300391886 /* DPAppDelegate.m in Sources */,
 				974BF7991795A68300391886 /* DPSlideyViewController.m in Sources */,
 				974BF7A81795AA2500391886 /* DPContentViewController.m in Sources */,
@@ -217,6 +216,7 @@
 				975387531796C704002581B1 /* NSString+UI.m in Sources */,
 				97AA7548179D337400AFC87E /* DPNiftyProgressBar.m in Sources */,
 				97AA754B179D414B00AFC87E /* UIColor+GradientOffset.m in Sources */,
+				97AA754F179D8E5C00AFC87E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
