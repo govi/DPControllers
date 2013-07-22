@@ -347,7 +347,6 @@
 - (void) setSelectedIndex:(int)s
 {
     selectedIndex = s;
-    int count = [datasource numberOfCellsforScrollableView:self];
     [self reset:CGPointMake( (scrollView.frame.size.width ) * s, 0 )];
     [self resetPointers];
 }

@@ -22,6 +22,8 @@
 		9753874F1796C699002581B1 /* DPScrollableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9753874C1796C699002581B1 /* DPScrollableView.m */; };
 		975387501796C699002581B1 /* DPScrollableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9753874E1796C699002581B1 /* DPScrollableViewCell.m */; };
 		975387531796C704002581B1 /* NSString+UI.m in Sources */ = {isa = PBXBuildFile; fileRef = 975387521796C704002581B1 /* NSString+UI.m */; };
+		97AA7548179D337400AFC87E /* DPNiftyProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 97AA7547179D337400AFC87E /* DPNiftyProgressBar.m */; };
+		97AA754B179D414B00AFC87E /* UIColor+GradientOffset.m in Sources */ = {isa = PBXBuildFile; fileRef = 97AA754A179D414B00AFC87E /* UIColor+GradientOffset.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,10 @@
 		9753874E1796C699002581B1 /* DPScrollableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPScrollableViewCell.m; sourceTree = "<group>"; };
 		975387511796C704002581B1 /* NSString+UI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UI.h"; sourceTree = "<group>"; };
 		975387521796C704002581B1 /* NSString+UI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UI.m"; sourceTree = "<group>"; };
+		97AA7546179D337400AFC87E /* DPNiftyProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPNiftyProgressBar.h; sourceTree = "<group>"; };
+		97AA7547179D337400AFC87E /* DPNiftyProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPNiftyProgressBar.m; sourceTree = "<group>"; };
+		97AA7549179D414B00AFC87E /* UIColor+GradientOffset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+GradientOffset.h"; sourceTree = "<group>"; };
+		97AA754A179D414B00AFC87E /* UIColor+GradientOffset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+GradientOffset.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,10 @@
 				974BF7A61795AA2400391886 /* DPContentViewController.m */,
 				974BF7A71795AA2400391886 /* DPContentViewController.xib */,
 				974BF7861795A68300391886 /* Supporting Files */,
+				97AA7546179D337400AFC87E /* DPNiftyProgressBar.h */,
+				97AA7547179D337400AFC87E /* DPNiftyProgressBar.m */,
+				97AA7549179D414B00AFC87E /* UIColor+GradientOffset.h */,
+				97AA754A179D414B00AFC87E /* UIColor+GradientOffset.m */,
 			);
 			path = Slidey;
 			sourceTree = "<group>";
@@ -201,6 +211,8 @@
 				9753874F1796C699002581B1 /* DPScrollableView.m in Sources */,
 				975387501796C699002581B1 /* DPScrollableViewCell.m in Sources */,
 				975387531796C704002581B1 /* NSString+UI.m in Sources */,
+				97AA7548179D337400AFC87E /* DPNiftyProgressBar.m in Sources */,
+				97AA754B179D414B00AFC87E /* UIColor+GradientOffset.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +294,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slidey/Slidey-Prefix.pch";
 				INFOPLIST_FILE = "Slidey/Slidey-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -293,6 +306,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slidey/Slidey-Prefix.pch";
 				INFOPLIST_FILE = "Slidey/Slidey-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DPContentViewController : UIViewController
+@class DPNiftyProgressBar;
+
+@interface DPContentViewController : UIViewController {
+    DPNiftyProgressBar *progress1;
+    DPNiftyProgressBar *progress2;
+    DPNiftyProgressBar *progress4;
+    DPNiftyProgressBar *progress5;
+}
 
 @property (weak, nonatomic) IBOutlet UILabel *label;
 
