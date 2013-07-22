@@ -24,6 +24,7 @@
 		975387531796C704002581B1 /* NSString+UI.m in Sources */ = {isa = PBXBuildFile; fileRef = 975387521796C704002581B1 /* NSString+UI.m */; };
 		97AA7548179D337400AFC87E /* DPNiftyProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 97AA7547179D337400AFC87E /* DPNiftyProgressBar.m */; };
 		97AA754B179D414B00AFC87E /* UIColor+GradientOffset.m in Sources */ = {isa = PBXBuildFile; fileRef = 97AA754A179D414B00AFC87E /* UIColor+GradientOffset.m */; };
+		97AA754D179D7F5C00AFC87E /* Slidey.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 97AA754C179D7F5C00AFC87E /* Slidey.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		97AA7547179D337400AFC87E /* DPNiftyProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPNiftyProgressBar.m; sourceTree = "<group>"; };
 		97AA7549179D414B00AFC87E /* UIColor+GradientOffset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+GradientOffset.h"; sourceTree = "<group>"; };
 		97AA754A179D414B00AFC87E /* UIColor+GradientOffset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+GradientOffset.m"; sourceTree = "<group>"; };
+		97AA754C179D7F5C00AFC87E /* Slidey.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Slidey.podspec; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		974BF7731795A68200391886 = {
 			isa = PBXGroup;
 			children = (
+				97AA754C179D7F5C00AFC87E /* Slidey.podspec */,
 				974BF7851795A68300391886 /* Slidey */,
 				974BF77E1795A68300391886 /* Frameworks */,
 				974BF77D1795A68300391886 /* Products */,
@@ -194,6 +197,7 @@
 				974BF7941795A68300391886 /* Default@2x.png in Resources */,
 				974BF7961795A68300391886 /* Default-568h@2x.png in Resources */,
 				974BF7A91795AA2500391886 /* DPContentViewController.xib in Resources */,
+				97AA754D179D7F5C00AFC87E /* Slidey.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
