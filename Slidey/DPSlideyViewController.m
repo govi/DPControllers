@@ -16,11 +16,18 @@
 
 @implementation DPSlideyViewController
 
--(id)init {
+-(id)initWithDelegate:(id<DPSlideyViewControllerDelegate>)delegate {
     self = [super init];
     if(self) {
-        self.delegate = self;
-        self.numberOfPages = 4;
+        if(delegate) {
+            self.delegate = delegate;
+            if(self.delegate && [self.delegate respondsToSelector:@selector(numberOfCellsForSlideyViewController:)])
+                self.numberOfPages = [self.delegate numberOfCellsForSlideyViewController:self];
+        }
+        else {
+            self.delegate = self;
+            self.numberOfPages = 4;
+        }
         // Do any additional setup after loading the view, typically from a nib.
         
         _scrollableView = [[DPScrollableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 32.0)];
@@ -102,14 +109,25 @@
 }
 
 -(UIViewController *)viewControllerForPage:(NSInteger)page {
+    UIViewController *vc = nil;
     if(page < [self.childViewControllers count]) {
-        return self.childViewControllers[page];
-    } else {
-        if (_delegate && [_delegate respondsToSelector:@selector(slideyController:viewControllerForPage:)]) {
-            return [_delegate slideyController:self viewControllerForPage:page];
-        }
-        return nil;
+        vc = self.childViewControllers[page];
     }
+    
+    if(!vc || [vc isKindOfClass:[DPContentViewController class]]) {
+        if (_delegate && [_delegate respondsToSelector:@selector(slideyController:viewControllerForPage:)]) {
+            vc = [_delegate slideyController:self viewControllerForPage:page];
+            if(vc) {
+                int count = [self.childViewControllers count];
+                while ([self.childViewControllers count] < page) {
+                    [self addChildViewController:[_delegate slideyController:self viewControllerForPage:count]];
+                    count ++;
+                }
+                [self addChildViewController:vc];
+            }
+        }
+    }
+    return vc;
 }
 
 - (void)didReceiveMemoryWarning

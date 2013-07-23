@@ -17,6 +17,7 @@
 -(void) slideyController:(DPSlideyViewController *)slidey willTransitionFrom:(NSInteger)from viewController:(UIViewController *)fromvc to:(NSInteger)to viewController:(UIViewController *)tovc;
 -(void) slideyController:(DPSlideyViewController *)slidey didTransitionFrom:(NSInteger)from viewController:(UIViewController *)fromvc to:(NSInteger)to viewController:(UIViewController *)tovc;
 -(UIViewController *) slideyController:(DPSlideyViewController *)slidey viewControllerForPage:(NSInteger)page;
+-(NSInteger) numberOfCellsForSlideyViewController:(DPSlideyViewController *)vc;
 
 @end
 
@@ -29,5 +30,7 @@
 @property (nonatomic) int currentPage;
 @property (nonatomic, weak) id<DPSlideyViewControllerDelegate> delegate;
 @property (nonatomic, strong) DPScrollableView *scrollableView;
+
+-(id)initWithDelegate:(id<DPSlideyViewControllerDelegate>)delegate;
 
 @end
