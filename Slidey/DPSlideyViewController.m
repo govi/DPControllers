@@ -16,16 +16,23 @@
 
 @implementation DPSlideyViewController
 
+-(id)init {
+    self = [super init];
+    if(self) {
+        self.delegate = self;
+        self.numberOfPages = 4;
+        // Do any additional setup after loading the view, typically from a nib.
+        
+        _scrollableView = [[DPScrollableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 32.0)];
+        [self.view addSubview:_scrollableView];
+        _scrollableView.datasource = self;
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.delegate = self;
-    self.numberOfPages = 4;
-	// Do any additional setup after loading the view, typically from a nib.
-    
-    _scrollableView = [[DPScrollableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 32.0)];
-    [self.view addSubview:_scrollableView];
-    _scrollableView.datasource = self;
     
     UIView* contentView = ((UIViewController *)[self viewControllerForPage:0]).view;
     contentView.frame = CGRectMake(0, 32.0, self.view.frame.size.width, self.view.frame.size.height - 32.0);
@@ -41,7 +48,7 @@
     [self.view addGestureRecognizer:right];
     
     self.currentPage = 0;
-     [self.scrollableView setSelectedIndex:0];
+    [self.scrollableView setSelectedIndex:0];
 }
 
 -(void)swiping:(UISwipeGestureRecognizer *)gesture {
@@ -85,6 +92,7 @@
 -(void)setNumberOfPages:(int)numberOfPages {
     _numberOfPages = numberOfPages;
     [self resetChildViewControllers];
+    [self.scrollableView setDatasource:self.scrollableView.datasource];
 }
 
 -(void) resetChildViewControllers {

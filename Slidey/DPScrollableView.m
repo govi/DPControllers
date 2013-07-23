@@ -259,7 +259,7 @@
     {
         [scrollView removeFromSuperview];
     }
-
+    scrollView = nil;
     scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(self.frame.size.width / 3.0, 0, self.frame.size.width / 3.0, self.frame.size.height - 3)];
     [self addSubview:scrollView];
     scrollView.scrollEnabled = YES;

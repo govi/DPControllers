@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
     s.source         =   { :git => 'https://github.com/govi/Slidey.git', :tag => '0.0.1' }
     s.platform       =   :ios, '5.0'
     s.source_files  =   'Slidey', 'Slidey/**/*.{h,m}'
-    s.resources     =   'res/**/*.png'
+    s.resources     =   'res/**/*.png', 'Slidey/**/*.xib'
     s.frameworks   =   'CodeGraphics'
     s.requires_arc  =   true
     s.homepage     =   'https://github.com/govi/Slidey'
