@@ -18,9 +18,11 @@
     if (self) {
         // Initialization code
         progressView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, self.frame.size.height)];
+        progressView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleRightMargin;
         [self addSubview:progressView];
         
         rulerView = [[DPNiftyRulerView alloc] initWithFrame:self.bounds];
+        rulerView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         [self addSubview:rulerView];
         
         float flt = (frame.size.width - 40.0)/2;
@@ -31,6 +33,7 @@
         label.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.3];
         label.textColor = [UIColor whiteColor];
         label.font = [UIFont systemFontOfSize:10.0];
+        label.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
         
         self.lineColor = [UIColor blackColor];
         self.progressColor = [UIColor blueColor];
@@ -97,12 +100,17 @@
     [UIView commitAnimations];
 }
 
+-(void)setFrame:(CGRect)frame {
+    [super setFrame:frame];
+    [self setProgress:self.progress];
+}
+
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 /*- (void)drawRect:(CGRect)rect
-{
-    
-}*/
+ {
+ 
+ }*/
 
 @end
 
