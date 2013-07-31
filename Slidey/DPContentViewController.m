@@ -42,7 +42,6 @@
                                   [UIColor colorWithRed:0.42 green:0.44 blue:0.45 alpha:1.0],
                                   [UIColor colorWithRed:0.80 green:0.48 blue:0.06 alpha:1.0]];
     progress2.progressColorType = DPNiftyProgressColorTypeSolid;
-    progress2.lineColor = [UIColor lightGrayColor];
     [self.view addSubview:progress2];
     
     progress4 = [[DPNiftyProgressBar alloc] initWithFrame:CGRectMake(20, 45, 280, 15)];
@@ -51,7 +50,7 @@
                                   [UIColor colorWithRed:0.42 green:0.44 blue:0.45 alpha:1.0],
                                   [UIColor colorWithRed:0.80 green:0.48 blue:0.06 alpha:1.0]];
     progress4.progressColorType = DPNiftyProgressColorTypeRGBGradient;
-    progress4.lineColor = [UIColor lightGrayColor];
+    progress4.lineColor = [UIColor redColor];
     [self.view addSubview:progress4];
     
     progress5 = [[DPNiftyProgressBar alloc] initWithFrame:CGRectMake(20, 65, 280, 15)];
@@ -60,7 +59,7 @@
                                   [UIColor greenColor],
                                   [UIColor blueColor]];
     progress5.progressColorType = DPNiftyProgressColorTypeRGBGradient;
-    progress5.lineColor = [UIColor lightGrayColor];
+    progress5.lineColor = [UIColor greenColor];
     [self.view addSubview:progress5];
     
     UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake(20, 100, 280, 20)];
@@ -97,6 +96,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    NSLog(@"called");
 }
 
 @end

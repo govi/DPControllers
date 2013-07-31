@@ -17,6 +17,7 @@ typedef enum {
 @class DPNiftyRulerView;
 
 @interface DPNiftyProgressBar : UIView {
+    UIView *gutterView;
     UIView *progressView;
     DPNiftyRulerView *rulerView;
     UILabel *label;

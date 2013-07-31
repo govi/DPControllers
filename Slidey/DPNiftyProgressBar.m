@@ -17,21 +17,25 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        progressView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, self.frame.size.height)];
-        progressView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleRightMargin;
+        gutterView = [[UIView alloc] initWithFrame:CGRectMake(5, self.frame.size.height - 3, self.frame.size.width - 10, 3)];
+        gutterView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
+        gutterView.backgroundColor = [UIColor lightGrayColor];
+        gutterView.layer.cornerRadius = 2.0;
+        [self addSubview:gutterView];
+        
+        progressView = [[UIView alloc] initWithFrame:CGRectMake(5, self.frame.size.height - 3, 0, 3)];
+        progressView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin;
+        progressView.layer.cornerRadius = 2.0;
         [self addSubview:progressView];
         
-        rulerView = [[DPNiftyRulerView alloc] initWithFrame:self.bounds];
-        rulerView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        rulerView = [[DPNiftyRulerView alloc] initWithFrame:CGRectMake(5, self.frame.size.height - 3, self.frame.size.width - 10, 3)];
+        rulerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
         [self addSubview:rulerView];
         
-        float flt = (frame.size.width - 40.0)/2;
-        float y = (frame.size.height - 20.0)/2;
-        label = [[UILabel alloc] initWithFrame:CGRectMake(flt, y, 40.0, 20.0)];
+        label = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width - 40.0, 0, 40.0, self.frame.size.height - 3)];
         [self addSubview:label];
-        label.textAlignment = UITextAlignmentCenter;
-        label.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.3];
-        label.textColor = [UIColor whiteColor];
+        label.textAlignment = UITextAlignmentRight;
+        label.textColor = [UIColor blackColor];
         label.font = [UIFont systemFontOfSize:10.0];
         label.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
         
@@ -39,8 +43,6 @@
         self.progressColor = [UIColor blueColor];
         self.numberOfSections = 3;
         self.progressColorType = DPNiftyProgressColorTypeSolid;
-        self.clipsToBounds = YES;
-        self.layer.cornerRadius = 7.0;
     }
     return self;
 }
@@ -48,8 +50,9 @@
 -(void)setLineColor:(UIColor *)lineColor {
     _lineColor = lineColor;
     rulerView.lineColor = lineColor;
-    self.layer.borderColor = [lineColor CGColor];
-    self.layer.borderWidth = 1.0;
+    label.textColor = lineColor;
+    //self.layer.borderColor = [lineColor CGColor];
+    //self.layer.borderWidth = 1.0;
 }
 
 -(void)setProgressColor:(UIColor *)progressColor {
@@ -82,7 +85,7 @@
     [UIView beginAnimations:@"progress animations" context:nil];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
     [UIView setAnimationDelay:0.4];
-    progressView.frame = CGRectMake(0, 0, self.frame.size.width * progress, self.frame.size.height);
+    progressView.frame = CGRectMake(5, self.frame.size.height - 3, (self.frame.size.width - 10)* progress, 3.0);
     if(self.thresholdColors && [self.thresholdColors count] == (self.numberOfSections + 1)) {
         if(self.progressColorType == DPNiftyProgressColorTypeRGBGradient && count < self.numberOfSections)
             progressView.backgroundColor = [UIColor RGBColorBetween:[self.thresholdColors objectAtIndex:count] and:[self.thresholdColors objectAtIndex:count+1] withOffset:offset];
@@ -97,6 +100,7 @@
         else if(self.progressColorType == DPNiftyProgressColorTypeHSVGradient)
             progressView.backgroundColor = [UIColor HSVColorBetween:self.fromProgressColor and:self.toProgressColor withOffset:progress];
     }
+    label.textColor = progressView.backgroundColor;
     [UIView commitAnimations];
 }
 

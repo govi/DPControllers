@@ -114,7 +114,7 @@
         vc = self.childViewControllers[page];
     }
     
-    if(!vc || [vc isKindOfClass:[DPContentViewController class]]) {
+    if(!vc) {
         if (_delegate && [_delegate respondsToSelector:@selector(slideyController:viewControllerForPage:)]) {
             vc = [_delegate slideyController:self viewControllerForPage:page];
             if(vc) {
@@ -143,7 +143,6 @@
 
 -(UIViewController *)slideyController:(DPSlideyViewController *)slidey viewControllerForPage:(NSInteger)page {
     DPContentViewController *vc = [[DPContentViewController alloc] init];
-    [self addChildViewController:vc];
     return vc;
 }
 
