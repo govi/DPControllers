@@ -75,6 +75,17 @@
     [self setProgress:self.progress];
 }
 
+-(void)setThresholdColors:(NSArray *)thresholdColors {
+    if(thresholdColors) {
+        if([thresholdColors count] == self.numberOfSections) {
+            NSArray *item = @[[UIColor blackColor]];
+            _thresholdColors = [item arrayByAddingObjectsFromArray:thresholdColors];
+        } else if([thresholdColors count] == self.numberOfSections + 1) {
+            _thresholdColors = thresholdColors;
+        }
+    }
+}
+
 -(void)setProgress:(float)progress {
     _progress = progress;
     float resolution = 1.0 / self.numberOfSections;
