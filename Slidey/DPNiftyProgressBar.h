@@ -32,6 +32,8 @@ typedef enum {
 @property (nonatomic) DPNiftyProgressColorType progressColorType;
 @property (nonatomic, strong) NSArray *thresholdColors;
 
+-(UIColor *)color;
+
 @end
 
 @interface DPNiftyRulerView : UIView {
