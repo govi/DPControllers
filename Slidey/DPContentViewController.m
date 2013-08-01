@@ -60,6 +60,7 @@
                                   [UIColor blueColor]];
     progress5.progressColorType = DPNiftyProgressColorTypeRGBGradient;
     progress5.lineColor = [UIColor greenColor];
+    progress5.sectionPoints = @[@"10", @"40", @"60"];
     [self.view addSubview:progress5];
     
     UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake(20, 100, 280, 20)];

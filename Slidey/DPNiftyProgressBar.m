@@ -30,6 +30,7 @@
         
         rulerView = [[DPNiftyRulerView alloc] initWithFrame:CGRectMake(5, self.frame.size.height - 3, self.frame.size.width - 10, 3)];
         rulerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
+        rulerView.sectionPoints = self.sectionPoints;
         [self addSubview:rulerView];
         
         label = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width - 40.0, 0, 40.0, self.frame.size.height - 3)];
@@ -125,6 +126,11 @@
     return progressView.backgroundColor;
 }
 
+-(void)setSectionPoints:(NSArray *)sectionPoints {
+    _sectionPoints = sectionPoints;
+    rulerView.sectionPoints = sectionPoints;
+}
+
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 /*- (void)drawRect:(CGRect)rect
@@ -152,6 +158,9 @@
     float resolution = self.frame.size.width / self.numberOfSections;
     float x = resolution;
     for(int i=0;i<self.numberOfSections;i++) {
+        if(self.sectionPoints && [self.sectionPoints count] == self.numberOfSections) {
+            x = ([[self.sectionPoints objectAtIndex:i] intValue]/[[self.sectionPoints lastObject] floatValue])*self.frame.size.width;
+        }
         CGContextStrokeRect(c, CGRectMake(x, 0, 0.5, self.frame.size.height));
         x += resolution;
     }

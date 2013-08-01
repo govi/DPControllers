@@ -31,6 +31,7 @@ typedef enum {
 @property (nonatomic) float progress;
 @property (nonatomic) DPNiftyProgressColorType progressColorType;
 @property (nonatomic, strong) NSArray *thresholdColors;
+@property (nonatomic, strong) NSArray *sectionPoints;
 
 -(UIColor *)color;
 
@@ -41,6 +42,7 @@ typedef enum {
 }
 
 @property (nonatomic) NSInteger numberOfSections;
+@property (nonatomic, strong) NSArray *sectionPoints;
 @property (nonatomic, strong) UIColor *lineColor;
 
 @end
