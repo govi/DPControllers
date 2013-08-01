@@ -37,6 +37,7 @@
         label.textAlignment = UITextAlignmentRight;
         label.textColor = [UIColor blackColor];
         label.font = [UIFont systemFontOfSize:10.0];
+        label.backgroundColor = [UIColor clearColor];
         label.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
         
         self.lineColor = [UIColor blackColor];
