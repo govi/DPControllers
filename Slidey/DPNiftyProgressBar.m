@@ -92,16 +92,16 @@
     
     int count = 0;
     float offset = 0;
+    float lastP = 0;
     while (count < [self.sectionPoints count]){
-        int val = [[self.sectionPoints objectAtIndex:count] intValue];
+        float val = [[self.sectionPoints objectAtIndex:count] intValue]/[[self.sectionPoints lastObject] floatValue];
         if (progress>=val) {
             count++;
         } else {
-            count--;
-            val = [[self.sectionPoints objectAtIndex:count] intValue];
-            offset = progress - val;
+            offset = progress - lastP;
             break;
         }
+        lastP = val;
     }
     
     [UIView beginAnimations:@"progress animations" context:nil];
