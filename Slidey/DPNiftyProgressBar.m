@@ -53,8 +53,6 @@
     _lineColor = lineColor;
     rulerView.lineColor = lineColor;
     label.textColor = lineColor;
-    //self.layer.borderColor = [lineColor CGColor];
-    //self.layer.borderWidth = 1.0;
 }
 
 -(void)setProgressColor:(UIColor *)progressColor {
@@ -90,10 +88,21 @@
 
 -(void)setProgress:(float)progress {
     _progress = progress;
-    float resolution = 1.0 / self.numberOfSections;
-    int count = (int)(progress / resolution);
-    float offset = (progress - resolution * count)/resolution;
     label.text = [NSString stringWithFormat:@"%0.1f%%", progress*100.0];
+    
+    int count = 0;
+    float offset = 0;
+    while (count < [self.sectionPoints count]){
+        int val = [[self.sectionPoints objectAtIndex:count] intValue];
+        if (progress>=val) {
+            count++;
+        } else {
+            count--;
+            val = [[self.sectionPoints objectAtIndex:count] intValue];
+            offset = progress - val;
+            break;
+        }
+    }
     
     [UIView beginAnimations:@"progress animations" context:nil];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
@@ -130,13 +139,6 @@
     _sectionPoints = sectionPoints;
     rulerView.sectionPoints = sectionPoints;
 }
-
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-/*- (void)drawRect:(CGRect)rect
- {
- 
- }*/
 
 @end
 
