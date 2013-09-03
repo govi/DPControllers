@@ -71,7 +71,6 @@ int signum(int n) { return (n < 0) ? -1 : (n > 0) ? +1 : 0; }
 }
 
 -(void)transitionFrom:(NSInteger)from to:(NSInteger)to {
-    CGRect screenRect = self.view.bounds;
     if(from != to && to < self.numberOfPages && to >= 0 && to != transitioningTo) {
         transitioningTo = to; //dummy variable with no other purpose rather than allowing transitions to not call here twice.
         UIViewController *fromvc = [self viewControllerForPage:from];
