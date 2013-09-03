@@ -23,6 +23,7 @@
 
 @interface DPSlideyViewController : UIViewController <UIScrollViewDelegate, DPSlideyViewControllerDelegate, DPScrollableViewDatasource> {
     BOOL swiping;
+    int transitioningTo;
 }
 
 @property (nonatomic) int numberOfPages;

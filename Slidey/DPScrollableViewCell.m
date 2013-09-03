@@ -25,7 +25,7 @@
         self.highlightedTextColor = [UIColor orangeColor];
         self.selectedTextColor = [UIColor whiteColor];
     }
-
+    
     return self;
 }
 
@@ -57,7 +57,7 @@
     {
         style = ScrollableViewStyleTextOnly;
     }
-
+    
     switch (style)
     {
         case ScrollableViewStyleTextOnly:
@@ -92,7 +92,7 @@
             color = highlightedTextColor;
         }
     }
-
+    
     if (selected)
     {
         font = selectedFont;
@@ -101,12 +101,12 @@
             color = selectedTextColor;
         }
     }
-
+    
     if (color)
     {
         [color setFill];
     }
-
+    
     switch (style)
     {
         case ScrollableViewStyleImageWithCaption:

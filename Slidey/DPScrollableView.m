@@ -36,17 +36,17 @@
 {
     pointerType = pType;
     CGRect frame = self.frame;
-
+    
     if (!leftPointer)
     {
         leftPointer = [[UIView alloc] initWithFrame:CGRectMake(frame.size.width / 3.0, frame.size.height - 2.5, frame.size.width / 6.0, 2)];
         leftPointer.backgroundColor = [UIColor blueColor];
         [self addSubview:leftPointer];
-
+        
         rightPointer = [[UIView alloc] initWithFrame:CGRectMake(frame.size.width / 2.0, frame.size.height - 2.5, frame.size.width / 6.0, 2)];
         rightPointer.backgroundColor = [UIColor blueColor];
         [self addSubview:rightPointer];
-
+        
         centerPointer = [[UIView alloc] initWithFrame:CGRectMake(frame.size.width / 3.0, frame.size.height - 2.5, frame.size.width / 3.0, 2)];
         centerPointer.backgroundColor = [UIColor blueColor];
         [self addSubview:centerPointer];
@@ -57,10 +57,10 @@
         rightPointer.frame = CGRectMake(frame.size.width / 2.0, frame.size.height - 2.5, frame.size.width / 6.0, 2);
         centerPointer.frame = CGRectMake(frame.size.width / 3.0, frame.size.height - 2.5, frame.size.width / 3.0, 2);
     }
-
+    
     leftPointer.hidden = NO;
     rightPointer.hidden = NO;
-
+    
     if (pointerType == PointerTypeAppear)
     {
         leftPointer.center = CGPointMake(self.frame.size.width / 12.0, leftPointer.center.y);
@@ -147,7 +147,7 @@
     {
         point = count - 1;
     }
-
+    
     float offset = point * scrollView.frame.size.width;
     if ( offset < (scrollView.contentSize.width - scrollView.frame.size.width + 10) )
     {
@@ -162,7 +162,7 @@
     {
         [datasource scrollableView:self willSelectCellAtIndex:selectedIndex];
     }
-
+    
     [UIView beginAnimations:@"pointeranims2" context:nil];
     [UIView setAnimationDelay:1.0];
     if (pointerType == PointerTypeMoving)
@@ -175,7 +175,7 @@
         leftPointer.alpha = 0.0;
         rightPointer.alpha = 0.0;
     }
-
+    
     [UIView commitAnimations];
     selectedIndex = [scrollView subviewAtPoint:CGPointMake(scrollView.contentOffset.x + scrollView.bounds.size.width / 2, 5)].tag - 1;
     int i = 0;
@@ -191,13 +191,13 @@
             {
                 ( (DPScrollableViewCell *)v ).selected = NO;
             }
-
+            
             [v setNeedsDisplay];
         }
-
+        
         i++;
     }
-
+    
     if ([datasource respondsToSelector:@selector(scrollableView:didSelectCellAtIndex:)])
     {
         [datasource scrollableView:self didSelectCellAtIndex:selectedIndex];
@@ -217,7 +217,7 @@
         {
             leftPointer.center = CGPointMake(5 * self.frame.size.width / 12.0, leftPointer.center.y);
         }
-
+        
         if (scrollView.contentSize.width - scrollView.contentOffset.x > scrollView.frame.size.width * 2.5)
         {
             rightPointer.center = CGPointMake(11 * self.frame.size.width / 12.0, rightPointer.center.y);
@@ -238,7 +238,7 @@
         {
             leftPointer.alpha = 0.0;
         }
-
+        
         if (scrollView.contentSize.width - scrollView.contentOffset.x > scrollView.frame.size.width * 2.5)
         {
             rightPointer.alpha = 1.0;
@@ -247,7 +247,7 @@
         {
             rightPointer.alpha = 0.0;
         }
-
+        
         [UIView commitAnimations];
     }
 }
@@ -269,7 +269,7 @@
     scrollView.clipsToBounds = NO;
     scrollView.delegate = self;
     [scrollView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)]];
-
+    
     datasource = ds;
     float x = 0;
     CGRect rect = CGRectZero;
@@ -284,7 +284,7 @@
         {
             lbl = [ds scrollableView:self getViewForIndex:i];
         }
-
+        
         if (!lbl)
         {
             DPScrollableViewCell *l = [[DPScrollableViewCell alloc] initWithFrame:CGRectMake(x, 0, self.frame.size.width / 3, scrollView.frame.size.height)];
@@ -293,12 +293,12 @@
             {
                 l.title = [ds scrollableView:self getTitleForIndex:i];
             }
-
+            
             if (hasImage)
             {
                 l.image = [ds scrollableView:self getImageForIndex:i];
             }
-
+            
             lbl = l;
             if ([ds respondsToSelector:@selector(scrollableView:didAddCell:)])
             {
@@ -309,16 +309,17 @@
         {
             if (!lbl.superview)
             {
-                [self addSubview:lbl];
+                lbl.frame = CGRectMake(x, 0, self.frame.size.width / 3, scrollView.frame.size.height);
+                [scrollView addSubview:lbl];
             }
         }
-
+        
         x += lbl.frame.size.width;
         rect = CGRectUnion(rect, lbl.frame);
         lbl.tag = i + 1;
         lbl.backgroundColor = [UIColor clearColor];
     }
-
+    
     scrollView.contentSize = rect.size;
 }
 
@@ -359,7 +360,7 @@
     {
         return val;
     }
-
+    
     return nil;
 }
 

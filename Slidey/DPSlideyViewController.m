@@ -10,6 +10,8 @@
 #import "DPContentViewController.h"
 #import "DPScrollableView.h"
 
+int signum(int n) { return (n < 0) ? -1 : (n > 0) ? +1 : 0; }
+
 @interface DPSlideyViewController ()
 
 @end
@@ -69,11 +71,13 @@
 }
 
 -(void)transitionFrom:(NSInteger)from to:(NSInteger)to {
-    if(from != to && to < self.numberOfPages && to >= 0) {
+    CGRect screenRect = self.view.bounds;
+    if(from != to && to < self.numberOfPages && to >= 0 && to != transitioningTo) {
+        transitioningTo = to; //dummy variable with no other purpose rather than allowing transitions to not call here twice.
         UIViewController *fromvc = [self viewControllerForPage:from];
         UIViewController *tovc = [self viewControllerForPage:to];
         tovc.view.frame = fromvc.view.frame;
-        tovc.view.center = CGPointMake(3*fromvc.view.center.x*(to-from), fromvc.view.center.y);
+        tovc.view.center = CGPointMake(3*self.view.center.x*signum(to-from), fromvc.view.center.y);
         __block id<DPSlideyViewControllerDelegate> dele = self.delegate;
         __block DPScrollableView *scView = self.scrollableView;
         __block DPSlideyViewController *current = self;
@@ -82,7 +86,7 @@
         
         [self transitionFromViewController:fromvc toViewController:tovc duration:0.4 options:UIViewAnimationOptionTransitionNone animations:^{
             float tmp = fromvc.view.center.x;
-            fromvc.view.center = CGPointMake(3*fromvc.view.center.x*(from-to), fromvc.view.center.y);
+            fromvc.view.center = CGPointMake(3*self.view.center.x*signum(from-to), fromvc.view.center.y);
             tovc.view.center = CGPointMake(tmp, fromvc.view.center.y);
         } completion:^(BOOL finished) {
             current.currentPage = to;
@@ -104,8 +108,14 @@
 
 -(void) resetChildViewControllers {
     for (UIViewController *controller in self.childViewControllers) {
+        [controller.view removeFromSuperview];
         [controller removeFromParentViewController];
     }
+    
+    UIView* contentView = ((UIViewController *)[self viewControllerForPage:self.currentPage]).view;
+    contentView.frame = CGRectMake(0, 32.0, self.view.frame.size.width, self.view.frame.size.height - 32.0);
+    contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+    [self.view addSubview:contentView];
 }
 
 -(UIViewController *)viewControllerForPage:(NSInteger)page {
