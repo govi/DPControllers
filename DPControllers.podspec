@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
     s.platform       =   :ios, '5.0'
     s.source_files  =   'DPControllers', 'DPControllers/**/*.{h,m}'
     s.resources     =   'res/**/*.png', 'DPControllers/**/*.xib'
-    s.frameworks   =   'CodeGraphics'
+    s.frameworks   =   'CoreGraphics','UIKit','QuartzCore'
     s.requires_arc  =   true
     s.homepage     =   'https://github.com/govi/DPControllers'
 end

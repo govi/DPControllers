@@ -25,16 +25,17 @@
 		971B609E17D6220D00576FFA /* DPScrollableView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 971B606F17D61CD700576FFA /* DPScrollableView.h */; };
 		971B609F17D6220D00576FFA /* DPScrollableViewCell.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 971B607117D61CD700576FFA /* DPScrollableViewCell.h */; };
 		971B60A217D6229900576FFA /* libDPControllers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 971B607F17D61EFD00576FFA /* libDPControllers.a */; };
-		971B60A717D6233B00576FFA /* DPContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 971B60A517D6233B00576FFA /* DPContentViewController.m */; };
-		971B60A817D6233B00576FFA /* DPContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971B60A617D6233B00576FFA /* DPContentViewController.xib */; };
+		971B60B317D6244B00576FFA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 971B60AA17D6244B00576FFA /* Default-568h@2x.png */; };
+		971B60B417D6244B00576FFA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 971B60AB17D6244B00576FFA /* Default.png */; };
+		971B60B517D6244B00576FFA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 971B60AC17D6244B00576FFA /* Default@2x.png */; };
+		971B60B617D6244B00576FFA /* DPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 971B60AE17D6244B00576FFA /* DPAppDelegate.m */; };
+		971B60B717D6244B00576FFA /* DPContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 971B60B017D6244B00576FFA /* DPContentViewController.m */; };
+		971B60B817D6244B00576FFA /* DPContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971B60B117D6244B00576FFA /* DPContentViewController.xib */; };
+		971B60B917D6244B00576FFA /* DPControllersExample-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 971B60B217D6244B00576FFA /* DPControllersExample-Info.plist */; };
 		974BF7801795A68300391886 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 974BF77F1795A68300391886 /* UIKit.framework */; };
 		974BF7821795A68300391886 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 974BF7811795A68300391886 /* Foundation.framework */; };
 		974BF7841795A68300391886 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 974BF7831795A68300391886 /* CoreGraphics.framework */; };
 		974BF78A1795A68300391886 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 974BF7881795A68300391886 /* InfoPlist.strings */; };
-		974BF7901795A68300391886 /* DPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 974BF78F1795A68300391886 /* DPAppDelegate.m */; };
-		974BF7921795A68300391886 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 974BF7911795A68300391886 /* Default.png */; };
-		974BF7941795A68300391886 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 974BF7931795A68300391886 /* Default@2x.png */; };
-		974BF7961795A68300391886 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 974BF7951795A68300391886 /* Default-568h@2x.png */; };
 		97AA754F179D8E5C00AFC87E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97AA754E179D8E5C00AFC87E /* main.m */; };
 /* End PBXBuildFile section */
 
@@ -86,21 +87,21 @@
 		971B608317D61EFE00576FFA /* DPControllers-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DPControllers-Prefix.pch"; sourceTree = "<group>"; };
 		971B608417D61EFE00576FFA /* DPControllers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DPControllers.h; sourceTree = "<group>"; };
 		971B609717D61FAF00576FFA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		971B60A417D6233B00576FFA /* DPContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPContentViewController.h; sourceTree = "<group>"; };
-		971B60A517D6233B00576FFA /* DPContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPContentViewController.m; sourceTree = "<group>"; };
-		971B60A617D6233B00576FFA /* DPContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPContentViewController.xib; sourceTree = "<group>"; };
+		971B60AA17D6244B00576FFA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		971B60AB17D6244B00576FFA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		971B60AC17D6244B00576FFA /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		971B60AD17D6244B00576FFA /* DPAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPAppDelegate.h; sourceTree = "<group>"; };
+		971B60AE17D6244B00576FFA /* DPAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPAppDelegate.m; sourceTree = "<group>"; };
+		971B60AF17D6244B00576FFA /* DPContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPContentViewController.h; sourceTree = "<group>"; };
+		971B60B017D6244B00576FFA /* DPContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPContentViewController.m; sourceTree = "<group>"; };
+		971B60B117D6244B00576FFA /* DPContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPContentViewController.xib; sourceTree = "<group>"; };
+		971B60B217D6244B00576FFA /* DPControllersExample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DPControllersExample-Info.plist"; sourceTree = "<group>"; };
 		974BF77C1795A68300391886 /* DPControllers Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DPControllers Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		974BF77F1795A68300391886 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		974BF7811795A68300391886 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		974BF7831795A68300391886 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		974BF7871795A68300391886 /* DPControllersExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DPControllersExample-Info.plist"; sourceTree = "<group>"; };
 		974BF7891795A68300391886 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		974BF78D1795A68300391886 /* DPControllers-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DPControllers-Prefix.pch"; sourceTree = "<group>"; };
-		974BF78E1795A68300391886 /* DPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DPAppDelegate.h; path = ../DPAppDelegate.h; sourceTree = "<group>"; };
-		974BF78F1795A68300391886 /* DPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DPAppDelegate.m; path = ../DPAppDelegate.m; sourceTree = "<group>"; };
-		974BF7911795A68300391886 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		974BF7931795A68300391886 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		974BF7951795A68300391886 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		97AA754E179D8E5C00AFC87E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -171,18 +172,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		971B60A317D6233B00576FFA /* DPControllersExample */ = {
+		971B60A917D6244B00576FFA /* DPControllersExample */ = {
 			isa = PBXGroup;
 			children = (
-				974BF78E1795A68300391886 /* DPAppDelegate.h */,
-				974BF78F1795A68300391886 /* DPAppDelegate.m */,
+				971B60AA17D6244B00576FFA /* Default-568h@2x.png */,
+				971B60AB17D6244B00576FFA /* Default.png */,
+				971B60AC17D6244B00576FFA /* Default@2x.png */,
+				971B60AD17D6244B00576FFA /* DPAppDelegate.h */,
+				971B60AE17D6244B00576FFA /* DPAppDelegate.m */,
+				971B60AF17D6244B00576FFA /* DPContentViewController.h */,
+				971B60B017D6244B00576FFA /* DPContentViewController.m */,
+				971B60B117D6244B00576FFA /* DPContentViewController.xib */,
+				971B60B217D6244B00576FFA /* DPControllersExample-Info.plist */,
 				974BF7861795A68300391886 /* Supporting Files */,
-				971B60A417D6233B00576FFA /* DPContentViewController.h */,
-				971B60A517D6233B00576FFA /* DPContentViewController.m */,
-				971B60A617D6233B00576FFA /* DPContentViewController.xib */,
 			);
-			name = DPControllersExample;
-			path = DPControllers/DPControllersExample;
+			path = DPControllersExample;
 			sourceTree = "<group>";
 		};
 		974BF7731795A68200391886 = {
@@ -191,7 +195,7 @@
 				971B609717D61FAF00576FFA /* QuartzCore.framework */,
 				971B605E17D61BAF00576FFA /* README.md */,
 				971B605C17D61ACD00576FFA /* DPControllers.podspec */,
-				971B60A317D6233B00576FFA /* DPControllersExample */,
+				971B60A917D6244B00576FFA /* DPControllersExample */,
 				974BF7851795A68300391886 /* DPControllers */,
 				974BF77E1795A68300391886 /* Frameworks */,
 				974BF77D1795A68300391886 /* Products */,
@@ -233,15 +237,11 @@
 			isa = PBXGroup;
 			children = (
 				97AA754E179D8E5C00AFC87E /* main.m */,
-				974BF7871795A68300391886 /* DPControllersExample-Info.plist */,
 				974BF7881795A68300391886 /* InfoPlist.strings */,
 				974BF78D1795A68300391886 /* DPControllers-Prefix.pch */,
-				974BF7911795A68300391886 /* Default.png */,
-				974BF7931795A68300391886 /* Default@2x.png */,
-				974BF7951795A68300391886 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
-			path = ..;
+			path = ../DPControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,10 +316,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				974BF78A1795A68300391886 /* InfoPlist.strings in Resources */,
-				974BF7921795A68300391886 /* Default.png in Resources */,
-				974BF7941795A68300391886 /* Default@2x.png in Resources */,
-				974BF7961795A68300391886 /* Default-568h@2x.png in Resources */,
-				971B60A817D6233B00576FFA /* DPContentViewController.xib in Resources */,
+				971B60B317D6244B00576FFA /* Default-568h@2x.png in Resources */,
+				971B60B417D6244B00576FFA /* Default.png in Resources */,
+				971B60B517D6244B00576FFA /* Default@2x.png in Resources */,
+				971B60B817D6244B00576FFA /* DPContentViewController.xib in Resources */,
+				971B60B917D6244B00576FFA /* DPControllersExample-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,9 +344,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				974BF7901795A68300391886 /* DPAppDelegate.m in Sources */,
 				97AA754F179D8E5C00AFC87E /* main.m in Sources */,
-				971B60A717D6233B00576FFA /* DPContentViewController.m in Sources */,
+				971B60B617D6244B00576FFA /* DPAppDelegate.m in Sources */,
+				971B60B717D6244B00576FFA /* DPContentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,7 +467,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DPControllers/DPControllers-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/DPControllers/DPControllersExample-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DPControllersExample/DPControllersExample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Build/**";
 				OTHER_LDFLAGS = (
@@ -483,7 +484,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DPControllers/DPControllers-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/DPControllers/DPControllersExample-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DPControllersExample/DPControllersExample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Build/**";
 				OTHER_LDFLAGS = (
