@@ -6,19 +6,19 @@
 //  Copyright (c) 2013 DP. All rights reserved.
 //
 
-#import "DPSlideyViewController.h"
+#import "DPSwipeViewController.h"
 #import "DPContentViewController.h"
 #import "DPScrollableView.h"
 
 int signum(int n) { return (n < 0) ? -1 : (n > 0) ? +1 : 0; }
 
-@interface DPSlideyViewController ()
+@interface DPSwipeViewController ()
 
 @end
 
-@implementation DPSlideyViewController
+@implementation DPSwipeViewController
 
--(id)initWithDelegate:(id<DPSlideyViewControllerDelegate>)delegate {
+-(id)initWithDelegate:(id<DPSwipeViewControllerDelegate>)delegate {
     self = [super init];
     if(self) {
         if(delegate) {
@@ -77,9 +77,9 @@ int signum(int n) { return (n < 0) ? -1 : (n > 0) ? +1 : 0; }
         UIViewController *tovc = [self viewControllerForPage:to];
         tovc.view.frame = fromvc.view.frame;
         tovc.view.center = CGPointMake(3*self.view.center.x*signum(to-from), fromvc.view.center.y);
-        __block id<DPSlideyViewControllerDelegate> dele = self.delegate;
+        __block id<DPSwipeViewControllerDelegate> dele = self.delegate;
         __block DPScrollableView *scView = self.scrollableView;
-        __block DPSlideyViewController *current = self;
+        __block DPSwipeViewController *current = self;
         if(self.delegate && [self.delegate respondsToSelector:@selector(slideyController:willTransitionFrom:viewController:to:viewController:)])
             [self.delegate slideyController:self willTransitionFrom:(NSInteger)from viewController:fromvc to:(NSInteger)to viewController:tovc];
         
@@ -145,12 +145,12 @@ int signum(int n) { return (n < 0) ? -1 : (n > 0) ? +1 : 0; }
     // Dispose of any resources that can be recreated.
 }
 
--(void)slideyController:(DPSlideyViewController *)slidey willTransitionFrom:(NSInteger)from viewController:(UIViewController *)fromvc to:(NSInteger)to viewController:(UIViewController *)tovc {
+-(void)slideyController:(DPSwipeViewController *)slidey willTransitionFrom:(NSInteger)from viewController:(UIViewController *)fromvc to:(NSInteger)to viewController:(UIViewController *)tovc {
     ((DPContentViewController *)fromvc).label.text = [NSString stringWithFormat:@"%d", from];
     ((DPContentViewController *)tovc).label.text = [NSString stringWithFormat:@"%d", to];
 }
 
--(UIViewController *)slideyController:(DPSlideyViewController *)slidey viewControllerForPage:(NSInteger)page {
+-(UIViewController *)slideyController:(DPSwipeViewController *)slidey viewControllerForPage:(NSInteger)page {
     DPContentViewController *vc = [[DPContentViewController alloc] init];
     return vc;
 }

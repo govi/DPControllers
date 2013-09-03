@@ -7,7 +7,7 @@
 //
 
 #import "DPAppDelegate.h"
-#import "DPSlideyViewController.h"
+#import "DPSwipeViewController.h"
 
 @implementation DPAppDelegate
 
@@ -15,7 +15,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[DPSlideyViewController alloc] initWithDelegate:nil];
+    self.viewController = [[DPSwipeViewController alloc] initWithDelegate:nil];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;

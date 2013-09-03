@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		971B605D17D61ACD00576FFA /* DPControllers.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 971B605C17D61ACD00576FFA /* DPControllers.podspec */; };
 		971B605F17D61BAF00576FFA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 971B605E17D61BAF00576FFA /* README.md */; };
+		971B607317D61CD700576FFA /* NSString+UI.m in Sources */ = {isa = PBXBuildFile; fileRef = 971B606217D61CD700576FFA /* NSString+UI.m */; };
+		971B607417D61CD700576FFA /* UIColor+GradientOffset.m in Sources */ = {isa = PBXBuildFile; fileRef = 971B606417D61CD700576FFA /* UIColor+GradientOffset.m */; };
+		971B607517D61CD700576FFA /* DPSwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 971B606717D61CD700576FFA /* DPSwipeViewController.m */; };
+		971B607617D61CD700576FFA /* DPContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 971B606A17D61CD700576FFA /* DPContentViewController.m */; };
+		971B607717D61CD700576FFA /* DPContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971B606B17D61CD700576FFA /* DPContentViewController.xib */; };
+		971B607817D61CD700576FFA /* DPNiftyProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 971B606E17D61CD700576FFA /* DPNiftyProgressBar.m */; };
+		971B607917D61CD700576FFA /* DPScrollableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 971B607017D61CD700576FFA /* DPScrollableView.m */; };
+		971B607A17D61CD700576FFA /* DPScrollableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 971B607217D61CD700576FFA /* DPScrollableViewCell.m */; };
 		974BF7801795A68300391886 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 974BF77F1795A68300391886 /* UIKit.framework */; };
 		974BF7821795A68300391886 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 974BF7811795A68300391886 /* Foundation.framework */; };
 		974BF7841795A68300391886 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 974BF7831795A68300391886 /* CoreGraphics.framework */; };
@@ -17,20 +25,27 @@
 		974BF7921795A68300391886 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 974BF7911795A68300391886 /* Default.png */; };
 		974BF7941795A68300391886 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 974BF7931795A68300391886 /* Default@2x.png */; };
 		974BF7961795A68300391886 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 974BF7951795A68300391886 /* Default-568h@2x.png */; };
-		974BF7991795A68300391886 /* DPSlideyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 974BF7981795A68300391886 /* DPSlideyViewController.m */; };
-		974BF7A81795AA2500391886 /* DPContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 974BF7A61795AA2400391886 /* DPContentViewController.m */; };
-		974BF7A91795AA2500391886 /* DPContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 974BF7A71795AA2400391886 /* DPContentViewController.xib */; };
-		9753874F1796C699002581B1 /* DPScrollableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9753874C1796C699002581B1 /* DPScrollableView.m */; };
-		975387501796C699002581B1 /* DPScrollableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9753874E1796C699002581B1 /* DPScrollableViewCell.m */; };
-		975387531796C704002581B1 /* NSString+UI.m in Sources */ = {isa = PBXBuildFile; fileRef = 975387521796C704002581B1 /* NSString+UI.m */; };
-		97AA7548179D337400AFC87E /* DPNiftyProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 97AA7547179D337400AFC87E /* DPNiftyProgressBar.m */; };
-		97AA754B179D414B00AFC87E /* UIColor+GradientOffset.m in Sources */ = {isa = PBXBuildFile; fileRef = 97AA754A179D414B00AFC87E /* UIColor+GradientOffset.m */; };
 		97AA754F179D8E5C00AFC87E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97AA754E179D8E5C00AFC87E /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		971B605C17D61ACD00576FFA /* DPControllers.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DPControllers.podspec; sourceTree = "<group>"; };
 		971B605E17D61BAF00576FFA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		971B606117D61CD700576FFA /* NSString+UI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UI.h"; sourceTree = "<group>"; };
+		971B606217D61CD700576FFA /* NSString+UI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UI.m"; sourceTree = "<group>"; };
+		971B606317D61CD700576FFA /* UIColor+GradientOffset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+GradientOffset.h"; sourceTree = "<group>"; };
+		971B606417D61CD700576FFA /* UIColor+GradientOffset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+GradientOffset.m"; sourceTree = "<group>"; };
+		971B606617D61CD700576FFA /* DPSwipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPSwipeViewController.h; sourceTree = "<group>"; };
+		971B606717D61CD700576FFA /* DPSwipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPSwipeViewController.m; sourceTree = "<group>"; };
+		971B606917D61CD700576FFA /* DPContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPContentViewController.h; sourceTree = "<group>"; };
+		971B606A17D61CD700576FFA /* DPContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPContentViewController.m; sourceTree = "<group>"; };
+		971B606B17D61CD700576FFA /* DPContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPContentViewController.xib; sourceTree = "<group>"; };
+		971B606D17D61CD700576FFA /* DPNiftyProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPNiftyProgressBar.h; sourceTree = "<group>"; };
+		971B606E17D61CD700576FFA /* DPNiftyProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPNiftyProgressBar.m; sourceTree = "<group>"; };
+		971B606F17D61CD700576FFA /* DPScrollableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPScrollableView.h; sourceTree = "<group>"; };
+		971B607017D61CD700576FFA /* DPScrollableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPScrollableView.m; sourceTree = "<group>"; };
+		971B607117D61CD700576FFA /* DPScrollableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPScrollableViewCell.h; sourceTree = "<group>"; };
+		971B607217D61CD700576FFA /* DPScrollableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPScrollableViewCell.m; sourceTree = "<group>"; };
 		974BF77C1795A68300391886 /* DPControllers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DPControllers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		974BF77F1795A68300391886 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		974BF7811795A68300391886 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -43,21 +58,6 @@
 		974BF7911795A68300391886 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		974BF7931795A68300391886 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		974BF7951795A68300391886 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		974BF7971795A68300391886 /* DPSlideyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DPSlideyViewController.h; sourceTree = "<group>"; };
-		974BF7981795A68300391886 /* DPSlideyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DPSlideyViewController.m; sourceTree = "<group>"; };
-		974BF7A51795AA2400391886 /* DPContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPContentViewController.h; sourceTree = "<group>"; };
-		974BF7A61795AA2400391886 /* DPContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPContentViewController.m; sourceTree = "<group>"; };
-		974BF7A71795AA2400391886 /* DPContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPContentViewController.xib; sourceTree = "<group>"; };
-		9753874B1796C699002581B1 /* DPScrollableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPScrollableView.h; sourceTree = "<group>"; };
-		9753874C1796C699002581B1 /* DPScrollableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPScrollableView.m; sourceTree = "<group>"; };
-		9753874D1796C699002581B1 /* DPScrollableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPScrollableViewCell.h; sourceTree = "<group>"; };
-		9753874E1796C699002581B1 /* DPScrollableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPScrollableViewCell.m; sourceTree = "<group>"; };
-		975387511796C704002581B1 /* NSString+UI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UI.h"; sourceTree = "<group>"; };
-		975387521796C704002581B1 /* NSString+UI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UI.m"; sourceTree = "<group>"; };
-		97AA7546179D337400AFC87E /* DPNiftyProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPNiftyProgressBar.h; sourceTree = "<group>"; };
-		97AA7547179D337400AFC87E /* DPNiftyProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPNiftyProgressBar.m; sourceTree = "<group>"; };
-		97AA7549179D414B00AFC87E /* UIColor+GradientOffset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+GradientOffset.h"; sourceTree = "<group>"; };
-		97AA754A179D414B00AFC87E /* UIColor+GradientOffset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+GradientOffset.m"; sourceTree = "<group>"; };
 		97AA754E179D8E5C00AFC87E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -75,6 +75,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		971B606017D61CD600576FFA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				971B606117D61CD700576FFA /* NSString+UI.h */,
+				971B606217D61CD700576FFA /* NSString+UI.m */,
+				971B606317D61CD700576FFA /* UIColor+GradientOffset.h */,
+				971B606417D61CD700576FFA /* UIColor+GradientOffset.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		971B606517D61CD700576FFA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				971B606617D61CD700576FFA /* DPSwipeViewController.h */,
+				971B606717D61CD700576FFA /* DPSwipeViewController.m */,
+				971B606817D61CD700576FFA /* Samples */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		971B606817D61CD700576FFA /* Samples */ = {
+			isa = PBXGroup;
+			children = (
+				971B606917D61CD700576FFA /* DPContentViewController.h */,
+				971B606A17D61CD700576FFA /* DPContentViewController.m */,
+				971B606B17D61CD700576FFA /* DPContentViewController.xib */,
+			);
+			path = Samples;
+			sourceTree = "<group>";
+		};
+		971B606C17D61CD700576FFA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				971B606D17D61CD700576FFA /* DPNiftyProgressBar.h */,
+				971B606E17D61CD700576FFA /* DPNiftyProgressBar.m */,
+				971B606F17D61CD700576FFA /* DPScrollableView.h */,
+				971B607017D61CD700576FFA /* DPScrollableView.m */,
+				971B607117D61CD700576FFA /* DPScrollableViewCell.h */,
+				971B607217D61CD700576FFA /* DPScrollableViewCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		974BF7731795A68200391886 = {
 			isa = PBXGroup;
 			children = (
@@ -107,24 +151,12 @@
 		974BF7851795A68300391886 /* DPControllers */ = {
 			isa = PBXGroup;
 			children = (
-				975387511796C704002581B1 /* NSString+UI.h */,
-				975387521796C704002581B1 /* NSString+UI.m */,
-				9753874B1796C699002581B1 /* DPScrollableView.h */,
-				9753874C1796C699002581B1 /* DPScrollableView.m */,
-				9753874D1796C699002581B1 /* DPScrollableViewCell.h */,
-				9753874E1796C699002581B1 /* DPScrollableViewCell.m */,
+				971B606017D61CD600576FFA /* Utils */,
+				971B606517D61CD700576FFA /* Controllers */,
+				971B606C17D61CD700576FFA /* Views */,
 				974BF78E1795A68300391886 /* DPAppDelegate.h */,
 				974BF78F1795A68300391886 /* DPAppDelegate.m */,
-				974BF7971795A68300391886 /* DPSlideyViewController.h */,
-				974BF7981795A68300391886 /* DPSlideyViewController.m */,
-				974BF7A51795AA2400391886 /* DPContentViewController.h */,
-				974BF7A61795AA2400391886 /* DPContentViewController.m */,
-				974BF7A71795AA2400391886 /* DPContentViewController.xib */,
 				974BF7861795A68300391886 /* Supporting Files */,
-				97AA7546179D337400AFC87E /* DPNiftyProgressBar.h */,
-				97AA7547179D337400AFC87E /* DPNiftyProgressBar.m */,
-				97AA7549179D414B00AFC87E /* UIColor+GradientOffset.h */,
-				97AA754A179D414B00AFC87E /* UIColor+GradientOffset.m */,
 			);
 			path = DPControllers;
 			sourceTree = "<group>";
@@ -199,9 +231,9 @@
 				974BF7921795A68300391886 /* Default.png in Resources */,
 				974BF7941795A68300391886 /* Default@2x.png in Resources */,
 				974BF7961795A68300391886 /* Default-568h@2x.png in Resources */,
-				974BF7A91795AA2500391886 /* DPContentViewController.xib in Resources */,
 				971B605D17D61ACD00576FFA /* DPControllers.podspec in Resources */,
 				971B605F17D61BAF00576FFA /* README.md in Resources */,
+				971B607717D61CD700576FFA /* DPContentViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,14 +245,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				974BF7901795A68300391886 /* DPAppDelegate.m in Sources */,
-				974BF7991795A68300391886 /* DPSlideyViewController.m in Sources */,
-				974BF7A81795AA2500391886 /* DPContentViewController.m in Sources */,
-				9753874F1796C699002581B1 /* DPScrollableView.m in Sources */,
-				975387501796C699002581B1 /* DPScrollableViewCell.m in Sources */,
-				975387531796C704002581B1 /* NSString+UI.m in Sources */,
-				97AA7548179D337400AFC87E /* DPNiftyProgressBar.m in Sources */,
-				97AA754B179D414B00AFC87E /* UIColor+GradientOffset.m in Sources */,
 				97AA754F179D8E5C00AFC87E /* main.m in Sources */,
+				971B607317D61CD700576FFA /* NSString+UI.m in Sources */,
+				971B607417D61CD700576FFA /* UIColor+GradientOffset.m in Sources */,
+				971B607517D61CD700576FFA /* DPSwipeViewController.m in Sources */,
+				971B607617D61CD700576FFA /* DPContentViewController.m in Sources */,
+				971B607817D61CD700576FFA /* DPNiftyProgressBar.m in Sources */,
+				971B607917D61CD700576FFA /* DPScrollableView.m in Sources */,
+				971B607A17D61CD700576FFA /* DPScrollableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,8 +332,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Slidey/DPControllers-Prefix.pch";
-				INFOPLIST_FILE = "Slidey/DPControllers-Info.plist";
+				GCC_PREFIX_HEADER = "DPControllers/DPControllers-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/DPControllers/DPControllers-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = DPControllers;
 				WRAPPER_EXTENSION = app;
@@ -312,8 +344,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Slidey/DPControllers-Prefix.pch";
-				INFOPLIST_FILE = "Slidey/DPControllers-Info.plist";
+				GCC_PREFIX_HEADER = "DPControllers/DPControllers-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/DPControllers/DPControllers-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = DPControllers;
 				WRAPPER_EXTENSION = app;

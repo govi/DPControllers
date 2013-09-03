@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class DPSlideyViewController;
+@class DPSwipeViewController;
 
 @interface DPAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) DPSlideyViewController *viewController;
+@property (strong, nonatomic) DPSwipeViewController *viewController;
 
 @end
