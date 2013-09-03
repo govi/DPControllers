@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		971B605D17D61ACD00576FFA /* DPControllers.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 971B605C17D61ACD00576FFA /* DPControllers.podspec */; };
+		971B605F17D61BAF00576FFA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 971B605E17D61BAF00576FFA /* README.md */; };
 		974BF7801795A68300391886 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 974BF77F1795A68300391886 /* UIKit.framework */; };
 		974BF7821795A68300391886 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 974BF7811795A68300391886 /* Foundation.framework */; };
 		974BF7841795A68300391886 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 974BF7831795A68300391886 /* CoreGraphics.framework */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		971B605C17D61ACD00576FFA /* DPControllers.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DPControllers.podspec; sourceTree = "<group>"; };
+		971B605E17D61BAF00576FFA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		974BF77C1795A68300391886 /* DPControllers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DPControllers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		974BF77F1795A68300391886 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		974BF7811795A68300391886 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -76,6 +78,7 @@
 		974BF7731795A68200391886 = {
 			isa = PBXGroup;
 			children = (
+				971B605E17D61BAF00576FFA /* README.md */,
 				971B605C17D61ACD00576FFA /* DPControllers.podspec */,
 				974BF7851795A68300391886 /* DPControllers */,
 				974BF77E1795A68300391886 /* Frameworks */,
@@ -198,6 +201,7 @@
 				974BF7961795A68300391886 /* Default-568h@2x.png in Resources */,
 				974BF7A91795AA2500391886 /* DPContentViewController.xib in Resources */,
 				971B605D17D61ACD00576FFA /* DPControllers.podspec in Resources */,
+				971B605F17D61BAF00576FFA /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
