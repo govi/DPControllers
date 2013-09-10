@@ -37,6 +37,7 @@
 		974BF7841795A68300391886 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 974BF7831795A68300391886 /* CoreGraphics.framework */; };
 		974BF78A1795A68300391886 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 974BF7881795A68300391886 /* InfoPlist.strings */; };
 		97AA754F179D8E5C00AFC87E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97AA754E179D8E5C00AFC87E /* main.m */; };
+		97AAD71617D63E2100123EC6 /* DPStackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97AAD71517D63E2100123EC6 /* DPStackViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,8 @@
 		974BF7891795A68300391886 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		974BF78D1795A68300391886 /* DPControllers-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DPControllers-Prefix.pch"; sourceTree = "<group>"; };
 		97AA754E179D8E5C00AFC87E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
+		97AAD71417D63E2100123EC6 /* DPStackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPStackViewController.h; sourceTree = "<group>"; };
+		97AAD71517D63E2100123EC6 /* DPStackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPStackViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +150,8 @@
 			children = (
 				971B606617D61CD700576FFA /* DPSwipeViewController.h */,
 				971B606717D61CD700576FFA /* DPSwipeViewController.m */,
+				97AAD71417D63E2100123EC6 /* DPStackViewController.h */,
+				97AAD71517D63E2100123EC6 /* DPStackViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -337,6 +342,7 @@
 				971B608E17D61F4200576FFA /* NSString+UI.m in Sources */,
 				971B609017D61F4200576FFA /* UIColor+GradientOffset.m in Sources */,
 				971B609217D61F4200576FFA /* DPSwipeViewController.m in Sources */,
+				97AAD71617D63E2100123EC6 /* DPStackViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +512,7 @@
 				971B608A17D61EFE00576FFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		974BF7771795A68300391886 /* Build configuration list for PBXProject "DPControllers" */ = {
 			isa = XCConfigurationList;

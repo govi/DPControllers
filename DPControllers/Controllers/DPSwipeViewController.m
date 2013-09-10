@@ -7,7 +7,6 @@
 //
 
 #import "DPSwipeViewController.h"
-#import "DPContentViewController.h"
 #import "DPScrollableView.h"
 
 int signum(int n) { return (n < 0) ? -1 : (n > 0) ? +1 : 0; }
@@ -143,16 +142,6 @@ int signum(int n) { return (n < 0) ? -1 : (n > 0) ? +1 : 0; }
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
--(void)slideyController:(DPSwipeViewController *)slidey willTransitionFrom:(NSInteger)from viewController:(UIViewController *)fromvc to:(NSInteger)to viewController:(UIViewController *)tovc {
-    ((DPContentViewController *)fromvc).label.text = [NSString stringWithFormat:@"%d", from];
-    ((DPContentViewController *)tovc).label.text = [NSString stringWithFormat:@"%d", to];
-}
-
--(UIViewController *)slideyController:(DPSwipeViewController *)slidey viewControllerForPage:(NSInteger)page {
-    DPContentViewController *vc = [[DPContentViewController alloc] init];
-    return vc;
 }
 
 -(int)numberOfCellsforScrollableView:(DPScrollableView *)view {
