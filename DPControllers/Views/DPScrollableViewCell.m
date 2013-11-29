@@ -61,7 +61,7 @@
     switch (style)
     {
         case ScrollableViewStyleTextOnly:
-            textRect = self.bounds;
+            textRect = CGRectMake(3, 0, self.frame.size.width - 6, self.frame.size.height);
             break;
         case ScrollableViewStyleImageOnly:
             imageRect = self.bounds;
@@ -126,6 +126,16 @@
         default:
             break;
     } /* switch */
+    
+    if(self.separatorColor)
+    {
+        CGContextRef c = UIGraphicsGetCurrentContext();
+        CGContextSaveGState(c);
+        [self.separatorColor setFill];
+        CGContextFillRect(c, CGRectMake(self.bounds.size.width-0.5, 0, 0.5, self.bounds.size.height));
+        CGContextFillRect(c, CGRectMake(0, 0, 0.5, self.bounds.size.height));
+        CGContextRestoreGState(c);
+    }
 }
 
 

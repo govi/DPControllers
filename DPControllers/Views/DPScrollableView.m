@@ -260,7 +260,7 @@
         [scrollView removeFromSuperview];
     }
     scrollView = nil;
-    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(self.frame.size.width / 3.0, 0, self.frame.size.width / 3.0, self.frame.size.height - 3)];
+    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(self.frame.size.width / 3.0, 0, self.frame.size.width / 3.0, self.frame.size.height)];
     [self addSubview:scrollView];
     scrollView.scrollEnabled = YES;
     scrollView.directionalLockEnabled = YES;
@@ -299,6 +299,7 @@
                 l.image = [ds scrollableView:self getImageForIndex:i];
             }
             
+            l.separatorColor = [UIColor darkGrayColor];
             lbl = l;
             if ([ds respondsToSelector:@selector(scrollableView:didAddCell:)])
             {

@@ -17,13 +17,13 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        gutterView = [[UIView alloc] initWithFrame:CGRectMake(5, self.frame.size.height - 3, self.frame.size.width - 10, 3)];
+        gutterView = [[RectFillerView alloc] initWithFrame:CGRectMake(5, self.frame.size.height - 3, self.frame.size.width - 10, 3)];
         gutterView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
-        gutterView.backgroundColor = [UIColor lightGrayColor];
+        gutterView.color = [UIColor lightGrayColor];
         gutterView.layer.cornerRadius = 2.0;
         [self addSubview:gutterView];
         
-        progressView = [[UIView alloc] initWithFrame:CGRectMake(5, self.frame.size.height - 3, 0, 3)];
+        progressView = [[RectFillerView alloc] initWithFrame:CGRectMake(5, self.frame.size.height - 3, 0, 3)];
         progressView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin;
         progressView.layer.cornerRadius = 2.0;
         [self addSubview:progressView];
@@ -39,6 +39,7 @@
         label.textColor = [UIColor blackColor];
         label.font = [UIFont systemFontOfSize:10.0];
         label.backgroundColor = [UIColor clearColor];
+        label.highlightedTextColor = [UIColor blackColor];
         label.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
         
         self.lineColor = [UIColor blackColor];
@@ -57,7 +58,7 @@
 
 -(void)setProgressColor:(UIColor *)progressColor {
     _progressColor = progressColor;
-    progressView.backgroundColor = progressColor;
+    progressView.color = progressColor;
 }
 
 -(void)setNumberOfSections:(NSInteger)numberOfSections {
@@ -110,19 +111,19 @@
     progressView.frame = CGRectMake(5, self.frame.size.height - 3, (self.frame.size.width - 10)* progress, 3.0);
     if(self.thresholdColors && [self.thresholdColors count] == (self.numberOfSections + 1)) {
         if(self.progressColorType == DPNiftyProgressColorTypeRGBGradient && count < self.numberOfSections)
-            progressView.backgroundColor = [UIColor RGBColorBetween:[self.thresholdColors objectAtIndex:count] and:[self.thresholdColors objectAtIndex:count+1] withOffset:offset];
+            progressView.color = [UIColor RGBColorBetween:[self.thresholdColors objectAtIndex:count] and:[self.thresholdColors objectAtIndex:count+1] withOffset:offset];
         else if(self.progressColorType == DPNiftyProgressColorTypeHSVGradient && count < self.numberOfSections)
-            progressView.backgroundColor = [UIColor HSVColorBetween:[self.thresholdColors objectAtIndex:count] and:[self.thresholdColors objectAtIndex:count+1] withOffset:offset];
+            progressView.color = [UIColor HSVColorBetween:[self.thresholdColors objectAtIndex:count] and:[self.thresholdColors objectAtIndex:count+1] withOffset:offset];
         else
-            progressView.backgroundColor = [self.thresholdColors objectAtIndex:count];
+            progressView.color = [self.thresholdColors objectAtIndex:count];
     }
     else if(self.toProgressColor && self.fromProgressColor) {
         if(self.progressColorType == DPNiftyProgressColorTypeRGBGradient)
-            progressView.backgroundColor = [UIColor RGBColorBetween:self.fromProgressColor and:self.toProgressColor withOffset:progress];
+            progressView.color = [UIColor RGBColorBetween:self.fromProgressColor and:self.toProgressColor withOffset:progress];
         else if(self.progressColorType == DPNiftyProgressColorTypeHSVGradient)
-            progressView.backgroundColor = [UIColor HSVColorBetween:self.fromProgressColor and:self.toProgressColor withOffset:progress];
+            progressView.color = [UIColor HSVColorBetween:self.fromProgressColor and:self.toProgressColor withOffset:progress];
     }
-    label.textColor = progressView.backgroundColor;
+    label.textColor = progressView.color;
     [UIView commitAnimations];
 }
 
@@ -132,7 +133,7 @@
 }
 
 -(UIColor *)color {
-    return progressView.backgroundColor;
+    return progressView.color;
 }
 
 -(void)setSectionPoints:(NSArray *)sectionPoints {
@@ -166,6 +167,26 @@
         CGContextStrokeRect(c, CGRectMake(x, 0, 0.5, self.frame.size.height));
         x += resolution;
     }
+    CGContextRestoreGState(c);
+}
+
+@end
+
+@implementation RectFillerView
+
+-(id)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if(self) {
+        self.backgroundColor = [UIColor clearColor];
+    }
+    return self;
+}
+
+-(void)drawRect:(CGRect)rect {
+    CGContextRef c = UIGraphicsGetCurrentContext();
+    CGContextSaveGState(c);
+    [self.color setFill];
+    CGContextFillRect(c, self.bounds);
     CGContextRestoreGState(c);
 }
 

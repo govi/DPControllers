@@ -15,10 +15,11 @@ typedef enum {
 } DPNiftyProgressColorType;
 
 @class DPNiftyRulerView;
+@class RectFillerView;
 
 @interface DPNiftyProgressBar : UIView {
-    UIView *gutterView;
-    UIView *progressView;
+    RectFillerView *gutterView;
+    RectFillerView *progressView;
     DPNiftyRulerView *rulerView;
     UILabel *label;
 }
@@ -44,5 +45,11 @@ typedef enum {
 @property (nonatomic) NSInteger numberOfSections;
 @property (nonatomic, strong) NSArray *sectionPoints;
 @property (nonatomic, strong) UIColor *lineColor;
+
+@end
+
+@interface RectFillerView : UIView
+
+@property (nonatomic, strong) UIColor *color;
 
 @end

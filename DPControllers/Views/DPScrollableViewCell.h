@@ -37,6 +37,7 @@ typedef enum {
 @property (nonatomic, strong) UIColor *textColor;
 @property (nonatomic, strong) UIColor *selectedTextColor;
 @property (nonatomic, strong) UIColor *highlightedTextColor;
+@property (nonatomic, strong) UIColor *separatorColor;
 @property (nonatomic) BOOL selected;
 @property (nonatomic) BOOL highlighted;
 
