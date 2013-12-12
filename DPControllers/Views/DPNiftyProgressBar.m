@@ -33,7 +33,7 @@
         rulerView.sectionPoints = self.sectionPoints;
         [self addSubview:rulerView];
         
-        label = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width - 40.0, 0, 40.0, self.frame.size.height - 3)];
+        label = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width - 60.0, 0, 60.0, self.frame.size.height - 3)];
         [self addSubview:label];
         label.textAlignment = UITextAlignmentRight;
         label.textColor = [UIColor blackColor];
@@ -89,8 +89,16 @@
 
 -(void)setProgress:(float)progress {
     _progress = progress;
-    label.text = [NSString stringWithFormat:@"%0.1f%%", progress*100.0];
-    
+    if(progress > 0) {
+        if(progress == 1.0)
+            label.text = [NSString stringWithFormat:@"%0.1f%% (%0.0f)", progress*100.0, self.points];
+        else
+            label.text = [NSString stringWithFormat:@"%0.1f%%", progress*100.0];
+    }
+    else if(self.points > 0)
+        label.text = [NSString stringWithFormat:@"%0.0f", self.points];
+    else
+        label.text = @" ➖ ";
     int count = 0;
     float offset = 0;
     float lastP = 0;
@@ -105,10 +113,6 @@
         lastP = val;
     }
     
-    [UIView beginAnimations:@"progress animations" context:nil];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-    [UIView setAnimationDelay:0.4];
-    progressView.frame = CGRectMake(5, self.frame.size.height - 3, (self.frame.size.width - 10)* progress, 3.0);
     if(self.thresholdColors && [self.thresholdColors count] == (self.numberOfSections + 1)) {
         if(self.progressColorType == DPNiftyProgressColorTypeRGBGradient && count < self.numberOfSections)
             progressView.color = [UIColor RGBColorBetween:[self.thresholdColors objectAtIndex:count] and:[self.thresholdColors objectAtIndex:count+1] withOffset:offset];
@@ -123,7 +127,12 @@
         else if(self.progressColorType == DPNiftyProgressColorTypeHSVGradient)
             progressView.color = [UIColor HSVColorBetween:self.fromProgressColor and:self.toProgressColor withOffset:progress];
     }
-    label.textColor = progressView.color;
+    label.textColor = [UIColor darkGrayColor];
+    
+    [UIView beginAnimations:@"progress animations" context:nil];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    [UIView setAnimationDelay:0.4];
+    progressView.frame = CGRectMake(5, self.frame.size.height - 3, (self.frame.size.width - 10)* progress, 3.0);
     [UIView commitAnimations];
 }
 
