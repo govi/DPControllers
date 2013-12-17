@@ -95,12 +95,8 @@ const float BARSIZE = 5.0;
 
 -(void)setProgress:(float)progress {
     _progress = progress;
-    if(progress > 0) {
-        if(progress == 1.0)
-            label.text = [NSString stringWithFormat:@"%0.1f%% (%0.0f)", progress*100.0, self.points];
-        else
-            label.text = [NSString stringWithFormat:@"%0.1f%%", progress*100.0];
-    }
+    if(progress > 0)
+        label.text = [NSString stringWithFormat:@"%0.1f%% (%0.0f)", progress*100.0, self.points];
     else if(self.points > 0)
         label.text = [NSString stringWithFormat:@"%0.0f", self.points];
     else
