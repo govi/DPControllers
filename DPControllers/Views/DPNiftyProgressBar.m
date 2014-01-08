@@ -43,6 +43,7 @@ const float BARSIZE = 5.0;
         label = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width - 90.0, 0, 80.0, self.frame.size.height - BARSIZE - 2)];
         [self addSubview:label];
         label.textAlignment = UITextAlignmentRight;
+        label.backgroundColor = [UIColor clearColor];
         label.textColor = [UIColor blackColor];
         label.font = [UIFont systemFontOfSize:10.0];
         label.highlightedTextColor = [UIColor blackColor];
