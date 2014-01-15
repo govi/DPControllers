@@ -146,7 +146,9 @@ const float BARSIZE = 5.0;
 }
 
 -(UIColor *)color {
-    return progressView.color;
+    if(progressView.color && progressView.color != [NSNull null])
+        return progressView.color;
+    return [UIColor blackColor];
 }
 
 -(void)setSectionPoints:(NSArray *)sectionPoints {
@@ -191,6 +193,7 @@ const float BARSIZE = 5.0;
     self = [super initWithFrame:frame];
     if(self) {
         self.backgroundColor = [UIColor clearColor];
+        self.color = [UIColor blackColor];
     }
     return self;
 }
@@ -198,6 +201,8 @@ const float BARSIZE = 5.0;
 -(void)drawRect:(CGRect)rect {
     CGContextRef c = UIGraphicsGetCurrentContext();
     CGContextSaveGState(c);
+    if(!self.color || self.color == [NSNull null])
+        self.color = [UIColor blackColor];
     [self.color setFill];
     CGContextFillRect(c, self.bounds);
     CGContextRestoreGState(c);
