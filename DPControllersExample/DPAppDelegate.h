@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @class DPSwipeViewController;
+@protocol DPSwipeViewControllerDelegate;
 
-@interface DPAppDelegate : UIResponder <UIApplicationDelegate>
+@interface DPAppDelegate : UIResponder <UIApplicationDelegate, DPSwipeViewControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

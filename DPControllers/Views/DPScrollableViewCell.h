@@ -9,16 +9,16 @@
 #import <UIKit/UIKit.h>
 
 typedef enum {
-    ScrollableViewStyleTrailingText,
-    ScrollableViewStyleImageOnly,
-    ScrollableViewStyleImageWithCaption,
-    ScrollableViewStyleTextOnly
-} ScrollableViewStyle;
+    DPScrollableViewStyleTrailingText,
+    DPScrollableViewStyleImageOnly,
+    DPScrollableViewStyleImageWithCaption,
+    DPScrollableViewStyleTextOnly
+} DPScrollableViewStyle;
 
 @interface DPScrollableViewCell : UIView {
     UIImage *image;
     NSString *title;
-    ScrollableViewStyle style;
+    DPScrollableViewStyle style;
     CGRect imageRect;
     CGRect textRect;
     BOOL selected;
@@ -34,7 +34,7 @@ typedef enum {
 
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) NSString *title;
-@property (nonatomic) ScrollableViewStyle style;
+@property (nonatomic) DPScrollableViewStyle style;
 @property (nonatomic, strong) UIColor *textColor;
 @property (nonatomic, strong) UIColor *selectedTextColor;
 @property (nonatomic, strong) UIFont *selectedFont;

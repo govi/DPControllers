@@ -31,6 +31,7 @@
 		971B60B617D6244B00576FFA /* DPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 971B60AE17D6244B00576FFA /* DPAppDelegate.m */; };
 		971B60B717D6244B00576FFA /* DPContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 971B60B017D6244B00576FFA /* DPContentViewController.m */; };
 		971B60B817D6244B00576FFA /* DPContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971B60B117D6244B00576FFA /* DPContentViewController.xib */; };
+		9749F84618D9C0D8000925AD /* DPSwipeViewControllerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9749F84518D9C0D8000925AD /* DPSwipeViewControllerView.m */; };
 		974BF7801795A68300391886 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 974BF77F1795A68300391886 /* UIKit.framework */; };
 		974BF7821795A68300391886 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 974BF7811795A68300391886 /* Foundation.framework */; };
 		974BF7841795A68300391886 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 974BF7831795A68300391886 /* CoreGraphics.framework */; };
@@ -96,6 +97,8 @@
 		971B60B017D6244B00576FFA /* DPContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPContentViewController.m; sourceTree = "<group>"; };
 		971B60B117D6244B00576FFA /* DPContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPContentViewController.xib; sourceTree = "<group>"; };
 		971B60B217D6244B00576FFA /* DPControllersExample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DPControllersExample-Info.plist"; sourceTree = "<group>"; };
+		9749F84418D9C0D8000925AD /* DPSwipeViewControllerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPSwipeViewControllerView.h; sourceTree = "<group>"; };
+		9749F84518D9C0D8000925AD /* DPSwipeViewControllerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPSwipeViewControllerView.m; sourceTree = "<group>"; };
 		974BF77C1795A68300391886 /* DPControllers Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DPControllers Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		974BF77F1795A68300391886 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		974BF7811795A68300391886 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -151,6 +154,8 @@
 				971B606717D61CD700576FFA /* DPSwipeViewController.m */,
 				97AAD71417D63E2100123EC6 /* DPStackViewController.h */,
 				97AAD71517D63E2100123EC6 /* DPStackViewController.m */,
+				9749F84418D9C0D8000925AD /* DPSwipeViewControllerView.h */,
+				9749F84518D9C0D8000925AD /* DPSwipeViewControllerView.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -338,6 +343,7 @@
 				971B609417D61F4F00576FFA /* DPScrollableView.m in Sources */,
 				971B609517D61F4F00576FFA /* DPScrollableViewCell.m in Sources */,
 				971B608E17D61F4200576FFA /* NSString+UI.m in Sources */,
+				9749F84618D9C0D8000925AD /* DPSwipeViewControllerView.m in Sources */,
 				971B609017D61F4200576FFA /* UIColor+GradientOffset.m in Sources */,
 				971B609217D61F4200576FFA /* DPSwipeViewController.m in Sources */,
 				97AAD71617D63E2100123EC6 /* DPStackViewController.m in Sources */,

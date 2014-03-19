@@ -41,36 +41,36 @@
         {
             if ( frame.size.height > (3 * lineHt) )
             {
-                style = ScrollableViewStyleImageWithCaption;
+                style = DPScrollableViewStyleImageWithCaption;
             }
             else
             {
-                style = ScrollableViewStyleTrailingText;
+                style = DPScrollableViewStyleTrailingText;
             }
         }
         else
         {
-            style = ScrollableViewStyleImageOnly;
+            style = DPScrollableViewStyleImageOnly;
         }
     }
     else
     {
-        style = ScrollableViewStyleTextOnly;
+        style = DPScrollableViewStyleTextOnly;
     }
     
     switch (style)
     {
-        case ScrollableViewStyleTextOnly:
+        case DPScrollableViewStyleTextOnly:
             textRect = CGRectMake(3, 0, self.frame.size.width - 6, self.frame.size.height);
             break;
-        case ScrollableViewStyleImageOnly:
+        case DPScrollableViewStyleImageOnly:
             imageRect = self.bounds;
             break;
-        case ScrollableViewStyleTrailingText:
+        case DPScrollableViewStyleTrailingText:
             imageRect = CGRectMake(3, self.frame.size.height - 18, 15, 15);
             textRect = CGRectMake(21, 0, self.frame.size.width - 21, self.frame.size.height);
             break;
-        case ScrollableViewStyleImageWithCaption:
+        case DPScrollableViewStyleImageWithCaption:
             imageRect = CGRectMake(3, 3, self.frame.size.width - 6, self.frame.size.height - 21);
             textRect = CGRectMake(0, self.frame.size.height - 18, self.frame.size.width, 18);
             break;
@@ -116,18 +116,18 @@
     
     switch (style)
     {
-        case ScrollableViewStyleImageWithCaption:
+        case DPScrollableViewStyleImageWithCaption:
             [image drawInRect:imageRect];
             [title drawInRect:textRect withFont:font lineBreakMode:NSLineBreakByTruncatingTail alignment:NSTextAlignmentCenter];
             break;
-        case ScrollableViewStyleTrailingText:
+        case DPScrollableViewStyleTrailingText:
             [image drawInRect:imageRect];
             [title drawInRect:textRect withFont:font lineBreakMode:NSLineBreakByTruncatingTail];
             break;
-        case ScrollableViewStyleTextOnly:
+        case DPScrollableViewStyleTextOnly:
             [title drawCenteredInRect:textRect withFont:font lineBreakMode:NSLineBreakByWordWrapping alignment:NSTextAlignmentCenter];
             break;
-        case ScrollableViewStyleImageOnly:
+        case DPScrollableViewStyleImageOnly:
             [image drawInRect:imageRect];
             break;
         default:

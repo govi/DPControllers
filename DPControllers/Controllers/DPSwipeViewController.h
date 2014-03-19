@@ -1,42 +1,56 @@
 //
-//  DPViewController.h
-//  Slidey
+//  DPSwipeViewController.h
+//  EventGenie
 //
-//  Created by Govi on 16/07/2013.
-//  Copyright (c) 2013 DP. All rights reserved.
+//  Created by Hugo Rumens on 14/01/2014.
+//  Copyright (c) 2014 GenieMobile. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "DPScrollableView.h"
 
+FOUNDATION_EXPORT NSInteger const DPScrollableViewTagIdentifier;
+
 @class DPSwipeViewController;
+
 
 @protocol DPSwipeViewControllerDelegate <NSObject>
 
+@required;
+
+- (UIViewController *)swipeController:(DPSwipeViewController *)swipe viewControllerForKey:(NSString *)key;
+
 @optional
--(void) slideyController:(DPSwipeViewController *)slidey willTransitionFrom:(NSInteger)from viewController:(UIViewController *)fromvc to:(NSInteger)to viewController:(UIViewController *)tovc;
--(void) slideyController:(DPSwipeViewController *)slidey didTransitionFrom:(NSInteger)from viewController:(UIViewController *)fromvc to:(NSInteger)to viewController:(UIViewController *)tovc;
--(UIViewController *) slideyController:(DPSwipeViewController *)slidey viewControllerForPage:(NSInteger)page;
--(NSInteger) numberOfCellsForSlideyViewController:(DPSwipeViewController *)vc;
+
+- (NSString *)swipeController:(DPSwipeViewController *)swipe tabTitleForKey:(NSString *)key;
+- (void)swipeController:(DPSwipeViewController *)swipe willTransitionFromController:(UIViewController *)fromVC withKey:(NSString *)fromKey toController:(UIViewController *)toVC withKey:(NSString *)toKey;
+- (void)swipeController:(DPSwipeViewController *)swipe didTransitionFromController:(UIViewController *)fromVC withKey:(NSString *)fromKey toController:(UIViewController *)toVC withKey:(NSString *)toKey;
+- (UIView *)swipeController:(DPSwipeViewController *)swipe tabViewForKey:(NSString *)key;
+- (void)swipeController:(DPSwipeViewController *)swipe didLongPressCellWithKey:(NSString *)key;
 
 @end
 
-@interface DPSwipeViewController : UIViewController <UIScrollViewDelegate, DPSwipeViewControllerDelegate, DPScrollableViewDatasource> {
+
+@interface DPSwipeViewController : UIViewController <DPScrollableViewDatasource>
+{
     BOOL swiping;
-    NSInteger transitioningTo;
-    NSMutableDictionary *childControllers;
+    int transitioningTo;
+    NSArray *_tabs;
+    NSMutableDictionary *_viewControllerCache;
 }
 
-@property (nonatomic) NSInteger numberOfPages;
-@property (nonatomic) float startOffset;
-@property (nonatomic) NSInteger currentPage;
-@property (nonatomic, weak) id<DPSwipeViewControllerDelegate> delegate;
+@property (nonatomic, strong) NSString *currentTab;
+@property (nonatomic, weak) id <DPSwipeViewControllerDelegate> delegate;
 @property (nonatomic, strong) DPScrollableView *scrollableView;
+@property (nonatomic) BOOL showPointer;
 
-- (id)initWithDelegate:(id<DPSwipeViewControllerDelegate>)delegate;
-- (void)setNumberOfPagesWithoutReset:(int)numberOfPages;
-- (void)resetViewControllerAtIndex:(int)index;
-- (void)startAtTabIndex:(NSInteger)index;
-- (void)insertControllerAtIndex:(NSInteger)index;
+- (id)initWithDelegate:(id <DPSwipeViewControllerDelegate>)delegate tabs:(NSArray *)tabs startingTab:(NSString *)startTab;
+- (void)setNewKey:(NSString *)newKey forControllerWithExistingKey:(NSString *)key;
+- (void)resetViewControllerWithKey:(NSString *)key;
+- (void)setSelectedKey:(NSString *)key;
+- (void)reloadTabWithKey:(NSString *)key;
+- (void)setTabs:(NSArray *)tabs;
+- (void)scrollTabIntoViewIfNeededForKey:(NSString *)key;
+- (void)childViewControllerViewTapped;
 
 @end

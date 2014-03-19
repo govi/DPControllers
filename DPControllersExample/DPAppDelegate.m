@@ -15,10 +15,18 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[DPSwipeViewController alloc] initWithDelegate:nil];
+    self.viewController = [[DPSwipeViewController alloc] initWithDelegate:self tabs:@[@"tab1", @"tab2", @"tab3", @"tab4"] startingTab:@"tab2"];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+-(NSString *)swipeController:(DPSwipeViewController *)swipe tabTitleForKey:(NSString *)key {
+    return @"title";
+}
+
+-(UIViewController *)swipeController:(DPSwipeViewController *)swipe viewControllerForKey:(NSString *)key {
+    return [[UIViewController alloc] init];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
