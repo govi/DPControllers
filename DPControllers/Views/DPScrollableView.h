@@ -37,13 +37,13 @@
     BOOL _scrollViewDraggedBeyondContentBoundary;
     
     NSInteger _selectedIndex;
-    NSInteger _scrolledToIndex;
     CGFloat _cellWidth;
 }
 
 
 @property (nonatomic, weak) id <DPScrollableViewDatasource> datasource;
 @property (nonatomic, strong) UIColor *textColor;
+@property (nonatomic) NSInteger selectedIndex;
 
 - (id)initWithFrame:(CGRect)frame datasource:(id <DPScrollableViewDatasource>)datasource;
 - (DPScrollableViewCell *)cellAtIndex:(NSUInteger)index;
