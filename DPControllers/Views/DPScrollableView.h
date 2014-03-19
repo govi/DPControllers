@@ -36,7 +36,7 @@
     CGPoint _contextOffsetAtStartOfDrag;
     BOOL _scrollViewDraggedBeyondContentBoundary;
     
-    NSInteger _scrolledToIndex;
+    NSInteger _selectedIndex;
     CGFloat _cellWidth;
 }
 
