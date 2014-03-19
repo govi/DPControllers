@@ -10,6 +10,6 @@
 
 @interface NSString (UI)
 
-- (void) drawCenteredInRect:(CGRect)contextRect withFont:(UIFont *)font lineBreakMode:(UILineBreakMode)lineBreakMode alignment:(UITextAlignment)alignment;
+- (void) drawCenteredInRect:(CGRect)contextRect withFont:(UIFont *)font lineBreakMode:(NSLineBreakMode)lineBreakMode alignment:(NSTextAlignment)alignment;
 
 @end

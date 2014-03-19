@@ -43,42 +43,42 @@ DPMarginMake(top, right, bottom, left)
 @protocol DPScrollableViewDatasource <NSObject>
 
 @optional
-- (UIView *) scrollableView:(DPScrollableView *)view getViewForIndex:(int)i;
-- (UIImage *) scrollableView:(DPScrollableView *)view getImageForIndex:(int)i;
-- (NSString *) scrollableView:(DPScrollableView *)view getTitleForIndex:(int)i;
+- (UIView *) scrollableView:(DPScrollableView *)view getViewForIndex:(NSUInteger)i;
+- (UIImage *) scrollableView:(DPScrollableView *)view getImageForIndex:(NSUInteger)i;
+- (NSString *) scrollableView:(DPScrollableView *)view getTitleForIndex:(NSUInteger)i;
 - (void) scrollableView:(DPScrollableView *)view didAddCell:(DPScrollableViewCell *)cell;
-- (void) scrollableView:(DPScrollableView *)view willSelectCellAtIndex:(int)index;
-- (void) scrollableView:(DPScrollableView *)view didSelectCellAtIndex:(int)index;
+- (void) scrollableView:(DPScrollableView *)view willSelectCellAtIndex:(NSInteger)index;
+- (void) scrollableView:(DPScrollableView *)view didSelectCellAtIndex:(NSInteger)index;
+- (void) scrollableView:(DPScrollableView *)view didLongPressCellAtIndex:(NSInteger)index;
 
 @required
 - (int) numberOfCellsforScrollableView:(DPScrollableView *)view;
 
 @end
 
-@interface DPScrollableView : UIView <UIScrollViewDelegate> {
+
+@interface DPScrollableView : UIView <UIScrollViewDelegate>
+{
     UIScrollView *scrollView;
-    UIView *leftPointer;
-    UIView *rightPointer;
-    UIView *centerPointer;
-    PointerType pointerType;
-    id<DPScrollableViewDatasource> __weak datasource;
-    UIColor *textColor;
-    int selectedIndex;
 }
 
 @property (nonatomic) PointerType pointerType;
-@property (nonatomic, weak) id<DPScrollableViewDatasource> datasource;
+@property (nonatomic, weak) id <DPScrollableViewDatasource> datasource;
 @property (nonatomic, strong) UIView *leftPointer;
 @property (nonatomic, strong) UIView *rightPointer;
 @property (nonatomic, strong) UIView *centerPointer;
 @property (nonatomic, strong) UIColor *textColor;
-@property (nonatomic) int selectedIndex;
+@property (nonatomic) NSInteger selectedIndex;
 
-- (DPScrollableViewCell *) cellAtIndex:(NSUInteger)index;
-- (UIView *) viewAtIndex:(NSUInteger)index;
-- (void) setHighlightOnAllRows:(BOOL)high;
+- (DPScrollableViewCell *)cellAtIndex:(NSUInteger)index;
+- (UIView *)viewAtIndex:(NSUInteger)index;
+- (void)setHighlightOnAllRows:(BOOL)high;
+- (void)reloadTabTitles;
+- (void)reloadTabAtIndex:(int)index;
+- (void)setSelectedIndex:(NSInteger)index animated:(BOOL)animated;
 
 @end
+
 
 @interface UIView (Extras)
 

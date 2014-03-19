@@ -31,7 +31,6 @@
 		971B60B617D6244B00576FFA /* DPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 971B60AE17D6244B00576FFA /* DPAppDelegate.m */; };
 		971B60B717D6244B00576FFA /* DPContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 971B60B017D6244B00576FFA /* DPContentViewController.m */; };
 		971B60B817D6244B00576FFA /* DPContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971B60B117D6244B00576FFA /* DPContentViewController.xib */; };
-		971B60B917D6244B00576FFA /* DPControllersExample-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 971B60B217D6244B00576FFA /* DPControllersExample-Info.plist */; };
 		974BF7801795A68300391886 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 974BF77F1795A68300391886 /* UIKit.framework */; };
 		974BF7821795A68300391886 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 974BF7811795A68300391886 /* Foundation.framework */; };
 		974BF7841795A68300391886 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 974BF7831795A68300391886 /* CoreGraphics.framework */; };
@@ -325,7 +324,6 @@
 				971B60B417D6244B00576FFA /* Default.png in Resources */,
 				971B60B517D6244B00576FFA /* Default@2x.png in Resources */,
 				971B60B817D6244B00576FFA /* DPContentViewController.xib in Resources */,
-				971B60B917D6244B00576FFA /* DPControllersExample-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

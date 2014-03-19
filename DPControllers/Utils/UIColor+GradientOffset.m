@@ -11,8 +11,8 @@
 @implementation UIColor (GradientOffset)
 
 +(UIColor *)RGBColorBetween:(UIColor *)from and:(UIColor *)to withOffset:(float)offset {
-    float red1, green1, blue1, alpha1;
-    float red2, green2, blue2, alpha2;
+    CGFloat red1, green1, blue1, alpha1;
+    CGFloat red2, green2, blue2, alpha2;
     [from getRed:&red1 green:&green1 blue:&blue1 alpha:&alpha1];
     [to getRed:&red2 green:&green2 blue:&blue2 alpha:&alpha2];
     return [UIColor colorWithRed:red1 + (red2 - red1)*offset
@@ -22,8 +22,8 @@
 }
 
 +(UIColor *)HSVColorBetween:(UIColor *)from and:(UIColor *)to withOffset:(float)offset {
-    float hue1, sat1, bri1, alpha1;
-    float hue2, sat2, bri2, alpha2;
+    CGFloat hue1, sat1, bri1, alpha1;
+    CGFloat hue2, sat2, bri2, alpha2;
     [from getHue:&hue1 saturation:&sat1 brightness:&bri1 alpha:&alpha1];
     [to getHue:&hue2 saturation:&sat2 brightness:&bri2 alpha:&alpha2];
     return [UIColor colorWithHue:hue1 + (hue2 - hue1)*offset

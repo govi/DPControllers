@@ -10,7 +10,7 @@
 
 @implementation NSString (UI)
 
-- (void) drawCenteredInRect:(CGRect)contextRect withFont:(UIFont *)font lineBreakMode:(UILineBreakMode)lineBreakMode alignment:(UITextAlignment)alignment
+- (void) drawCenteredInRect:(CGRect)contextRect withFont:(UIFont *)font lineBreakMode:(NSLineBreakMode)lineBreakMode alignment:(NSTextAlignment)alignment
 {
     CGFloat fontHeight = font.pointSize;
     CGFloat yOffset = (contextRect.size.height - fontHeight) / 2.0;

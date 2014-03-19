@@ -11,7 +11,7 @@
 
 @implementation DPScrollableViewCell
 @synthesize image, title, style, textColor, selected;
-@synthesize selectedTextColor, highlighted, highlightedTextColor;
+@synthesize selectedTextColor, selectedFont, highlighted, highlightedTextColor, highlightedBackgroundColor;
 
 - (id) initWithFrame:(CGRect)frame
 {
@@ -20,7 +20,7 @@
     {
         selectedFont = [UIFont boldSystemFontOfSize:[UIFont systemFontSize]];
         normalFont = [UIFont systemFontOfSize:[UIFont systemFontSize]];
-        highlightedFont = [UIFont italicSystemFontOfSize:[UIFont systemFontSize]];
+        highlightedFont = [UIFont systemFontOfSize:[UIFont systemFontSize]];
         self.textColor = [UIColor lightGrayColor];
         self.highlightedTextColor = [UIColor orangeColor];
         self.selectedTextColor = [UIColor whiteColor];
@@ -82,6 +82,7 @@
 
 - (void) drawRect:(CGRect)rect
 {
+    CGContextRef context = UIGraphicsGetCurrentContext();
     UIFont *font = normalFont;
     UIColor *color = textColor;
     if (highlighted)
@@ -90,6 +91,12 @@
         if (highlightedTextColor)
         {
             color = highlightedTextColor;
+        }
+        
+        if (highlightedBackgroundColor)
+        {
+            [highlightedBackgroundColor setFill];
+            CGContextFillRect(context, CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height));
         }
     }
     
@@ -111,14 +118,14 @@
     {
         case ScrollableViewStyleImageWithCaption:
             [image drawInRect:imageRect];
-            [title drawInRect:textRect withFont:font lineBreakMode:UILineBreakModeTailTruncation alignment:UITextAlignmentCenter];
+            [title drawInRect:textRect withFont:font lineBreakMode:NSLineBreakByTruncatingTail alignment:NSTextAlignmentCenter];
             break;
         case ScrollableViewStyleTrailingText:
             [image drawInRect:imageRect];
-            [title drawInRect:textRect withFont:font lineBreakMode:UILineBreakModeTailTruncation];
+            [title drawInRect:textRect withFont:font lineBreakMode:NSLineBreakByTruncatingTail];
             break;
         case ScrollableViewStyleTextOnly:
-            [title drawCenteredInRect:textRect withFont:font lineBreakMode:UILineBreakModeTailTruncation alignment:UITextAlignmentCenter];
+            [title drawCenteredInRect:textRect withFont:font lineBreakMode:NSLineBreakByWordWrapping alignment:NSTextAlignmentCenter];
             break;
         case ScrollableViewStyleImageOnly:
             [image drawInRect:imageRect];
@@ -129,12 +136,11 @@
     
     if(self.separatorColor)
     {
-        CGContextRef c = UIGraphicsGetCurrentContext();
-        CGContextSaveGState(c);
+        CGContextSaveGState(context);
         [self.separatorColor setFill];
-        CGContextFillRect(c, CGRectMake(self.bounds.size.width-0.5, 0, 0.5, self.bounds.size.height));
-        CGContextFillRect(c, CGRectMake(0, 0, 0.5, self.bounds.size.height));
-        CGContextRestoreGState(c);
+        CGContextFillRect(context, CGRectMake(self.bounds.size.width-0.5, 0, 0.5, self.bounds.size.height));
+        CGContextFillRect(context, CGRectMake(0, 0, 0.5, self.bounds.size.height));
+        CGContextRestoreGState(context);
     }
 }
 

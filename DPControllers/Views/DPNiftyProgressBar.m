@@ -146,7 +146,7 @@ const float BARSIZE = 5.0;
 }
 
 -(UIColor *)color {
-    if(progressView.color && progressView.color != [NSNull null])
+    if(progressView.color && progressView.color != (UIColor *)[NSNull null])
         return progressView.color;
     return [UIColor blackColor];
 }
@@ -201,7 +201,7 @@ const float BARSIZE = 5.0;
 -(void)drawRect:(CGRect)rect {
     CGContextRef c = UIGraphicsGetCurrentContext();
     CGContextSaveGState(c);
-    if(!self.color || self.color == [NSNull null])
+    if(!self.color || self.color == (id)[NSNull null])
         self.color = [UIColor blackColor];
     [self.color setFill];
     CGContextFillRect(c, self.bounds);

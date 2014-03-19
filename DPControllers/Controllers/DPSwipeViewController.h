@@ -23,15 +23,20 @@
 
 @interface DPSwipeViewController : UIViewController <UIScrollViewDelegate, DPSwipeViewControllerDelegate, DPScrollableViewDatasource> {
     BOOL swiping;
-    int transitioningTo;
+    NSInteger transitioningTo;
+    NSMutableDictionary *childControllers;
 }
 
-@property (nonatomic) int numberOfPages;
+@property (nonatomic) NSInteger numberOfPages;
 @property (nonatomic) float startOffset;
-@property (nonatomic) int currentPage;
+@property (nonatomic) NSInteger currentPage;
 @property (nonatomic, weak) id<DPSwipeViewControllerDelegate> delegate;
 @property (nonatomic, strong) DPScrollableView *scrollableView;
 
--(id)initWithDelegate:(id<DPSwipeViewControllerDelegate>)delegate;
+- (id)initWithDelegate:(id<DPSwipeViewControllerDelegate>)delegate;
+- (void)setNumberOfPagesWithoutReset:(int)numberOfPages;
+- (void)resetViewControllerAtIndex:(int)index;
+- (void)startAtTabIndex:(NSInteger)index;
+- (void)insertControllerAtIndex:(NSInteger)index;
 
 @end
