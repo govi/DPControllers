@@ -10,25 +10,20 @@
 #import "NSString+UI.h"
 
 @implementation DPScrollableViewCell
-@synthesize image, title, style, textColor, selected;
+@synthesize image, title, style, textColor, selected, normalFont, highlightedFont;
 @synthesize selectedTextColor, selectedFont, highlighted, highlightedTextColor, highlightedBackgroundColor;
 
-- (id) initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self)
-    {
-        selectedFont = [UIFont boldSystemFontOfSize:[UIFont systemFontSize]];
-        normalFont = [UIFont systemFontOfSize:[UIFont systemFontSize]];
-        highlightedFont = [UIFont systemFontOfSize:[UIFont systemFontSize]];
-        self.textColor = [UIColor lightGrayColor];
-        self.highlightedTextColor = [UIColor orangeColor];
-        self.selectedTextColor = [UIColor whiteColor];
++(void)initialize {
+    if(self == [DPScrollableViewCell self]) {
+        DPScrollableViewCell *proxy = [DPScrollableViewCell appearance];
+        proxy.normalFont = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+        proxy.highlightedFont = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+        proxy.selectedFont = [UIFont boldSystemFontOfSize:[UIFont systemFontSize]];
+        proxy.textColor = [UIColor lightGrayColor];
+        proxy.highlightedTextColor = [UIColor orangeColor];
+        proxy.selectedTextColor = [UIColor whiteColor];
     }
-    
-    return self;
 }
-
 
 - (void) setFrame:(CGRect)frame
 {
