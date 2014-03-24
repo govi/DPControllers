@@ -44,7 +44,7 @@
     _scrollView.showsVerticalScrollIndicator = NO;
     _scrollView.showsHorizontalScrollIndicator = NO;
     _scrollView.decelerationRate = UIScrollViewDecelerationRateFast;
-    _scrollView.clipsToBounds = NO;
+    _scrollView.clipsToBounds = YES;
     _scrollView.delegate = self;
     [_scrollView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)]];
     UILongPressGestureRecognizer *longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressTapped:)];
