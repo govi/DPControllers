@@ -32,6 +32,7 @@ typedef enum {
 @property (nonatomic) float progress;
 @property (nonatomic) float points;
 @property (nonatomic) float barSize;
+@property (nonatomic) BOOL noText;
 @property (nonatomic) DPNiftyProgressColorType progressColorType;
 @property (nonatomic, strong) NSArray *thresholdColors;
 @property (nonatomic, strong) NSArray *sectionPoints;

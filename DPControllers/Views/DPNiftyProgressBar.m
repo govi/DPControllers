@@ -101,12 +101,19 @@
 
 -(void)setProgress:(float)progress {
     _progress = progress;
-    if(progress > 0)
-        label.text = [NSString stringWithFormat:@"%0.1f%% (%0.0f)", progress*100.0, self.points];
-    else if(self.points > 0)
-        label.text = [NSString stringWithFormat:@"%0.0f", self.points];
+    if(!self.noText)
+    {
+        if(progress > 0)
+            label.text = [NSString stringWithFormat:@"%0.1f%% (%0.0f)", progress*100.0, self.points];
+        else if(self.points > 0)
+            label.text = [NSString stringWithFormat:@"%0.0f", self.points];
+        else
+            label.text = @" ➖ ";
+    }
     else
-        label.text = @" ➖ ";
+    {
+        label.text = nil;
+    }
     int count = 0;
     float offset = 0;
     float lastP = 0;
