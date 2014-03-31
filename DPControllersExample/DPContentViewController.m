@@ -53,8 +53,8 @@
     progress4.lineColor = [UIColor redColor];
     [self.view addSubview:progress4];
     
-    progress5 = [[DPNiftyProgressBar alloc] initWithFrame:CGRectMake(0, 90, 320, 2) andBarSize:2.0];
-    progress5.noText = YES;
+    progress5 = [[DPNiftyProgressBar alloc] initWithFrame:CGRectMake(0, 90, 320, 2) andBarSize:2.0 andBarEdgeInsets:UIEdgeInsetsZero];
+    progress5.showsLabel = NO;
     progress5.thresholdColors = @[[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0],
                                   [UIColor redColor],
                                   [UIColor greenColor],

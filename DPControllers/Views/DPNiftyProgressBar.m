@@ -14,17 +14,19 @@
 
 - (id)initWithFrame:(CGRect)frame
 {
-    return [self initWithFrame:frame andBarSize:5.0];
+    return [self initWithFrame:frame andBarSize:5.0 andBarEdgeInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
 }
 
-- (id)initWithFrame:(CGRect)frame andBarSize:(float)barSize
+- (id)initWithFrame:(CGRect)frame andBarSize:(float)barSize andBarEdgeInsets:(UIEdgeInsets)insets
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
         self.barSize = barSize;
+        self.showsLabel = YES;
+        self.barInsets = insets;
         
-        gutterView = [[RectFillerView alloc] initWithFrame:CGRectMake(5, self.frame.size.height - self.barSize, self.frame.size.width - 10, self.barSize)];
+        gutterView = [[RectFillerView alloc] initWithFrame:CGRectMake(insets.left, self.frame.size.height - self.barSize, self.frame.size.width - insets.left - insets.right, self.barSize)];
         gutterView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
         gutterView.color = [UIColor lightGrayColor];
         gutterView.layer.cornerRadius = self.barSize;
@@ -34,13 +36,13 @@
         gutterView.layer.shadowRadius = 3.0;
         [self addSubview:gutterView];
         
-        progressView = [[RectFillerView alloc] initWithFrame:CGRectMake(5, self.frame.size.height - self.barSize, 0, self.barSize)];
+        progressView = [[RectFillerView alloc] initWithFrame:CGRectMake(insets.left, self.frame.size.height - self.barSize, 0, self.barSize)];
         progressView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin;
         progressView.layer.cornerRadius = self.barSize;
         progressView.clipsToBounds = YES;
         [self addSubview:progressView];
         
-        rulerView = [[DPNiftyRulerView alloc] initWithFrame:CGRectMake(5, self.frame.size.height - self.barSize - 1, self.frame.size.width - 10, self.barSize + 1)];
+        rulerView = [[DPNiftyRulerView alloc] initWithFrame:CGRectMake(insets.left, self.frame.size.height - self.barSize - 1, self.frame.size.width - insets.left - insets.right, self.barSize + 1)];
         rulerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
         rulerView.sectionPoints = self.sectionPoints;
         [self addSubview:rulerView];
@@ -101,7 +103,7 @@
 
 -(void)setProgress:(float)progress {
     _progress = progress;
-    if(!self.noText)
+    if(self.showsLabel)
     {
         if(progress > 0)
             label.text = [NSString stringWithFormat:@"%0.1f%% (%0.0f)", progress*100.0, self.points];
@@ -147,7 +149,7 @@
     [UIView beginAnimations:@"progress animations" context:nil];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
     [UIView setAnimationDelay:0.4];
-    progressView.frame = CGRectMake(5, self.frame.size.height - self.barSize, (self.frame.size.width - 10)* progress, self.barSize);
+    progressView.frame = CGRectMake(self.barInsets.left, self.frame.size.height - self.barSize, (self.frame.size.width - self.barInsets.left - self.barInsets.right)* progress, self.barSize);
     [UIView commitAnimations];
 }
 
