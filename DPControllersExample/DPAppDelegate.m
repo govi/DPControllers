@@ -8,6 +8,7 @@
 
 #import "DPAppDelegate.h"
 #import "DPSwipeViewController.h"
+#import "DPContentViewController.h"
 
 @implementation DPAppDelegate
 
@@ -15,7 +16,8 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[DPSwipeViewController alloc] initWithDelegate:self tabs:@[@"tab1", @"tab2", @"tab3", @"tab4"] startingTab:@"tab2"];
+    //self.viewController = [[DPSwipeViewController alloc] initWithDelegate:self tabs:@[@"tab1", @"tab2", @"tab3", @"tab4"] startingTab:@"tab2"];
+    self.viewController = [[DPContentViewController alloc] init];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;

@@ -10,7 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "UIColor+GradientOffset.h"
 
-const float BARSIZE = 5.0;
+const float BARSIZE = 2.0;
 
 @implementation DPNiftyProgressBar
 
@@ -196,6 +196,11 @@ const float BARSIZE = 5.0;
         self.color = [UIColor blackColor];
     }
     return self;
+}
+
+-(void)setFrame:(CGRect)frame {
+    [super setFrame:frame];
+    [self setNeedsDisplay];
 }
 
 -(void)drawRect:(CGRect)rect {
