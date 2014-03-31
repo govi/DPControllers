@@ -51,6 +51,7 @@
                                   [UIColor colorWithRed:0.80 green:0.48 blue:0.06 alpha:1.0]];
     progress4.progressColorType = DPNiftyProgressColorTypeRGBGradient;
     progress4.lineColor = [UIColor redColor];
+    progress4.hideOnZeroProgress = YES;
     [self.view addSubview:progress4];
     
     progress5 = [[DPNiftyProgressBar alloc] initWithFrame:CGRectMake(0, 90, 320, 2) andBarSize:2.0 andBarEdgeInsets:UIEdgeInsetsZero];

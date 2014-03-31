@@ -151,6 +151,8 @@
     [UIView setAnimationDelay:0.4];
     progressView.frame = CGRectMake(self.barInsets.left, self.frame.size.height - self.barSize, (self.frame.size.width - self.barInsets.left - self.barInsets.right)* progress, self.barSize);
     [UIView commitAnimations];
+    
+    self.hidden = (self.hideOnZeroProgress && progress == 0);
 }
 
 -(void)setFrame:(CGRect)frame {
