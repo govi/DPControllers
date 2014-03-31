@@ -10,37 +10,42 @@
 #import <QuartzCore/QuartzCore.h>
 #import "UIColor+GradientOffset.h"
 
-const float BARSIZE = 2.0;
-
 @implementation DPNiftyProgressBar
 
 - (id)initWithFrame:(CGRect)frame
 {
+    return [self initWithFrame:frame andBarSize:5.0];
+}
+
+- (id)initWithFrame:(CGRect)frame andBarSize:(float)barSize
+{
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        gutterView = [[RectFillerView alloc] initWithFrame:CGRectMake(5, self.frame.size.height - BARSIZE, self.frame.size.width - 10, BARSIZE)];
+        self.barSize = barSize;
+        
+        gutterView = [[RectFillerView alloc] initWithFrame:CGRectMake(5, self.frame.size.height - self.barSize, self.frame.size.width - 10, self.barSize)];
         gutterView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
         gutterView.color = [UIColor lightGrayColor];
-        gutterView.layer.cornerRadius = BARSIZE;
+        gutterView.layer.cornerRadius = self.barSize;
         gutterView.clipsToBounds = YES;
         gutterView.layer.shadowColor = [UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:0.5].CGColor;
         gutterView.layer.shadowOffset = CGSizeMake(0.0, -1.0);
         gutterView.layer.shadowRadius = 3.0;
         [self addSubview:gutterView];
         
-        progressView = [[RectFillerView alloc] initWithFrame:CGRectMake(5, self.frame.size.height - BARSIZE, 0, BARSIZE)];
+        progressView = [[RectFillerView alloc] initWithFrame:CGRectMake(5, self.frame.size.height - self.barSize, 0, self.barSize)];
         progressView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin;
-        progressView.layer.cornerRadius = BARSIZE;
+        progressView.layer.cornerRadius = self.barSize;
         progressView.clipsToBounds = YES;
         [self addSubview:progressView];
         
-        rulerView = [[DPNiftyRulerView alloc] initWithFrame:CGRectMake(5, self.frame.size.height - BARSIZE - 1, self.frame.size.width - 10, BARSIZE + 1)];
+        rulerView = [[DPNiftyRulerView alloc] initWithFrame:CGRectMake(5, self.frame.size.height - self.barSize - 1, self.frame.size.width - 10, self.barSize + 1)];
         rulerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
         rulerView.sectionPoints = self.sectionPoints;
         [self addSubview:rulerView];
         
-        label = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width - 90.0, 0, 80.0, self.frame.size.height - BARSIZE - 2)];
+        label = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width - 90.0, 0, 80.0, self.frame.size.height - self.barSize - 2)];
         [self addSubview:label];
         label.textAlignment = UITextAlignmentRight;
         label.backgroundColor = [UIColor clearColor];
@@ -135,7 +140,7 @@ const float BARSIZE = 2.0;
     [UIView beginAnimations:@"progress animations" context:nil];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
     [UIView setAnimationDelay:0.4];
-    progressView.frame = CGRectMake(5, self.frame.size.height - BARSIZE, (self.frame.size.width - 10)* progress, BARSIZE);
+    progressView.frame = CGRectMake(5, self.frame.size.height - self.barSize, (self.frame.size.width - 10)* progress, self.barSize);
     [UIView commitAnimations];
 }
 

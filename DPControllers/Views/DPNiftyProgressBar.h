@@ -31,11 +31,13 @@ typedef enum {
 @property (nonatomic) NSInteger numberOfSections;
 @property (nonatomic) float progress;
 @property (nonatomic) float points;
+@property (nonatomic) float barSize;
 @property (nonatomic) DPNiftyProgressColorType progressColorType;
 @property (nonatomic, strong) NSArray *thresholdColors;
 @property (nonatomic, strong) NSArray *sectionPoints;
 
 -(UIColor *)color;
+- (id)initWithFrame:(CGRect)frame andBarSize:(float)barSize;
 
 @end
 
