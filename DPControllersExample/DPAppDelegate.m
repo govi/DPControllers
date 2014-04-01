@@ -16,7 +16,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[DPSwipeViewController alloc] initWithDelegate:self tabs:@[@"tab1", @"tab2", @"tab3", @"tab4"] startingTab:@"tab2"];
+    self.viewController = [[DPSwipeViewController alloc] initWithDelegate:self tabs:@[@"tab1", @"tab2", @"tab3", @"tab4", @"tab5", @"tab6", @"tab7"] startingTab:@"tab2"];
     self.viewController.scrollableView.textColor = [UIColor whiteColor];
     //self.viewController = [[DPContentViewController alloc] init];
     self.window.rootViewController = self.viewController;
@@ -25,7 +25,7 @@
 }
 
 -(NSString *)swipeController:(DPSwipeViewController *)swipe tabTitleForKey:(NSString *)key {
-    return @"title";
+    return [NSString stringWithFormat:@"very %@", key];
 }
 
 -(UIViewController *)swipeController:(DPSwipeViewController *)swipe viewControllerForKey:(NSString *)key {

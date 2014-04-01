@@ -58,15 +58,10 @@
     BOOL hasText = [ds respondsToSelector:@selector(scrollableView:getTitleForIndex:)];
     BOOL hasImage = [ds respondsToSelector:@selector(scrollableView:getImageForIndex:)];
     
-    _cellWidth = self.frame.size.width / 3;
-    if (cellCount == 1)
-    {
-        _cellWidth = self.frame.size.width;
-    }
-    if (cellCount == 2)
-    {
-        _cellWidth = self.frame.size.width / 2;
-    }
+    if(cellCount > 3)
+        _cellWidth = (self.frame.size.width/3) - 10;
+    else
+        _cellWidth = self.frame.size.width/cellCount;
     
     for (int i = 0; i < cellCount; i++)
     {
@@ -217,6 +212,7 @@
         
         i++;
     }
+    [self scrollToIndex:_selectedIndex animated:YES];
 }
 
 
@@ -273,12 +269,31 @@
 - (void)scrollToIndex:(NSInteger)index animated:(BOOL)animated
 {
     NSInteger cellCount = [_datasource numberOfCellsforScrollableView:self];
-    assert(cellCount > 3);
-    assert(index >= 0);
-    assert(index <= cellCount-3);
+    //sanitising the index value
+    if (cellCount <= 3)
+    {
+        return; //no need to do anything when the cell count is less than 3;
+    }
+    else if(index < 0)
+    {
+        index = 0;
+    }
+    else if(index > cellCount - 3)
+    {
+        index = cellCount - 3;
+    }
     
     _scrolledToIndex = index;
     CGFloat newX = _scrolledToIndex * _cellWidth;
+    CGFloat remainingLength = (cellCount - _scrolledToIndex) * _cellWidth;
+    if (remainingLength < _scrollView.frame.size.width)
+    {
+        newX = _scrollView.contentSize.width - _scrollView.frame.size.width;
+    }
+    else if (newX >= _cellWidth)
+    {
+        newX -= 15.0;//so that if there is a cell before the current cell, it will be shown a little bit
+    }
     [_scrollView setContentOffset:CGPointMake(newX, 0) animated:YES];
 }
 
@@ -523,7 +538,7 @@
 
 - (void)scrollingEnded
 {
-    CGFloat width = self.bounds.size.width/3;
+    CGFloat width = _cellWidth;
     CGFloat x = _scrollView.contentOffset.x;
     NSInteger index = (int)floor(x / (width));
     
@@ -546,6 +561,15 @@
     
     _scrolledToIndex = index;
     CGFloat newX = index * width;
+    CGFloat remainingLength = (count - index) * _cellWidth;
+    if (remainingLength < _scrollView.frame.size.width)
+    {
+        newX = _scrollView.contentSize.width - _scrollView.frame.size.width;
+    }
+    else if (newX >= _cellWidth)
+    {
+        newX -= 15.0;//so that if there is a cell before the current cell, it will be shown a little bit
+    }
     [_scrollView setContentOffset:CGPointMake(newX, 0) animated:YES];
 }
 
