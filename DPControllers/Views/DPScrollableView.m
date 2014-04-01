@@ -444,9 +444,10 @@
 
 -(UIImage *)arrowImageRotatedby:(CGFloat)radians {
     UIGraphicsBeginImageContext(CGSizeMake(16, 16));
-    NSString *arrow = radians < 0 ?@"⬖":@"⬗";
+    //NSString *arrow = radians < 0 ?@"⬖":@"⬗";
+    NSString *arrow = radians < 0 ?@"❰":@"❱";
     [self.textColor setFill];
-    [arrow drawInRect:CGRectMake(0, -8, 16, 16) withFont:[UIFont systemFontOfSize:24]];
+    [arrow drawInRect:CGRectMake(0, -4, 16, 16) withFont:[UIFont systemFontOfSize:16]];
     UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return img;
