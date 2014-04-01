@@ -447,7 +447,7 @@
     //NSString *arrow = radians < 0 ?@"⬖":@"⬗";
     NSString *arrow = radians < 0 ?@"❰":@"❱";
     [self.textColor setFill];
-    [arrow drawInRect:CGRectMake(0, -4, 16, 16) withFont:[UIFont systemFontOfSize:16]];
+    [arrow drawInRect:CGRectMake(0, -3, 16, 22) withFont:[UIFont systemFontOfSize:16]];
     UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return img;
