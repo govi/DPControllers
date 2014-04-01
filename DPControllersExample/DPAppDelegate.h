@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DPSwipeViewController.h"
 
 @class DPSwipeViewController;
-@protocol DPSwipeViewControllerDelegate;
 
 @interface DPAppDelegate : UIResponder <UIApplicationDelegate, DPSwipeViewControllerDelegate>
 

@@ -321,6 +321,26 @@
 
 #pragma mark - Scroll Indicators
 
+-(void)flashScrollIndicators
+{
+    NSInteger cellCount = [_datasource numberOfCellsforScrollableView:self];
+    if (cellCount > 3)
+    {
+        NSInteger currentVisibleIndex = _scrolledToIndex;
+        if (currentVisibleIndex <= 0)
+        {
+            [self flashRightScrollIndicator];
+        }
+        else if (currentVisibleIndex >= cellCount-3)
+        {
+            [self flashLeftScrollIndicator];
+        }
+        else
+        {
+            [self flashBothScrollIndicators];
+        }
+    }
+}
 
 - (void)flashLeftScrollIndicator
 {
@@ -424,10 +444,9 @@
 
 -(UIImage *)arrowImageRotatedby:(CGFloat)radians {
     UIGraphicsBeginImageContext(CGSizeMake(16, 16));
-    NSString *arrow = @"⇪";
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextRotateCTM(context, radians);
-    [arrow drawInRect:CGRectMake(0, 0, 16, 16) withFont:[UIFont systemFontOfSize:12]];
+    NSString *arrow = radians < 0 ?@"⬖":@"⬗";
+    [self.textColor setFill];
+    [arrow drawInRect:CGRectMake(0, -8, 16, 16) withFont:[UIFont systemFontOfSize:24]];
     UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return img;
@@ -468,10 +487,12 @@
     if (_scrollViewDraggedBeyondContentBoundary)
     {
         _scrollViewDraggedBeyondContentBoundary = NO;
+        [self flashScrollIndicators]; // when the scrollview goed beyond bounds
         return;
     }
     
     [self scrollingEnded];
+    [self flashScrollIndicators];//present after scrolling ended, to use the _scrolledToIndex
 }
 
 
@@ -493,6 +514,8 @@
     else
     {
         [self scrollingEnded];
+        if(!decelerate)
+            [self flashScrollIndicators];//flash the indicators only when not decelerating, as its handled elsewhere. Also, present after scrollingended as we need the _scrolledToIndex.
     }
 }
 

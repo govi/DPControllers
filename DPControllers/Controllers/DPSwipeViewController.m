@@ -106,21 +106,7 @@ NSInteger const DPScrollableViewTagIdentifier = 0xdeadf00d;
         [self.scrollableView scrollToIndex:index animated:NO];
     }
     
-    if (tabsCount > 3)
-    {
-        if (index == 0)
-        {
-            [self.scrollableView flashRightScrollIndicator];
-        }
-        else if (index == tabsCount-3)
-        {
-            [self.scrollableView flashLeftScrollIndicator];
-        }
-        else
-        {
-            [self.scrollableView flashBothScrollIndicators];
-        }
-    }
+    [self.scrollableView flashScrollIndicators];
 }
 
 

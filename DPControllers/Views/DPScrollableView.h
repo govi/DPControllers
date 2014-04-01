@@ -57,6 +57,7 @@
 - (void)flashLeftScrollIndicator;
 - (void)flashRightScrollIndicator;
 - (void)flashBothScrollIndicators;
+- (void)flashScrollIndicators;
 - (void)removeScrollIndicators;
 
 @end
