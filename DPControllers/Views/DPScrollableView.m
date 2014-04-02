@@ -503,12 +503,10 @@
     if (_scrollViewDraggedBeyondContentBoundary)
     {
         _scrollViewDraggedBeyondContentBoundary = NO;
-        [self flashScrollIndicators]; // when the scrollview goed beyond bounds
         return;
     }
     
     [self scrollingEnded];
-    [self flashScrollIndicators];//present after scrolling ended, to use the _scrolledToIndex
 }
 
 
@@ -530,8 +528,6 @@
     else
     {
         [self scrollingEnded];
-        if(!decelerate)
-            [self flashScrollIndicators];//flash the indicators only when not decelerating, as its handled elsewhere. Also, present after scrollingended as we need the _scrolledToIndex.
     }
 }
 
