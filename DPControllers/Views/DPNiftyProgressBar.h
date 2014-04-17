@@ -28,6 +28,7 @@ typedef enum {
 @property (nonatomic, strong) UIColor *progressColor;
 @property (nonatomic, strong) UIColor *fromProgressColor;
 @property (nonatomic, strong) UIColor *toProgressColor;
+@property (nonatomic, strong) UIColor *gutterColor;
 @property (nonatomic) NSInteger numberOfSections;
 @property (nonatomic) float progress;
 @property (nonatomic) float points;

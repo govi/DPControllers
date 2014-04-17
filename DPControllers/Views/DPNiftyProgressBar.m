@@ -101,6 +101,12 @@
     }
 }
 
+-(void)setGutterColor:(UIColor *)gutterColor
+{
+    gutterView.backgroundColor = gutterColor;
+    _gutterColor = gutterColor;
+}
+
 -(void)setProgress:(float)progress {
     _progress = progress;
     if(self.showsLabel)
