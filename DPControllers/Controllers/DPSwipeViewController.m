@@ -191,12 +191,13 @@ NSInteger const DPScrollableViewTagIdentifier = 0xdeadf00d;
     if (fromKey != toKey)
     {
         UIViewController *fromVC = [self viewControllerForKey:fromKey];
+        [fromVC.navigationController setToolbarHidden:YES];
         UIViewController *toVC = [self viewControllerForKey:toKey];
         
         BOOL movingRight = ([_tabs indexOfObject:toKey] > [_tabs indexOfObject:fromKey] ? YES : NO);
         
-        toVC.view.frame = fromVC.view.frame;
-        toVC.view.center = CGPointMake(3 * self.view.center.x * (movingRight ? 1 : -1), fromVC.view.center.y);
+        toVC.view.frame = CGRectMake(0, 44.0, self.view.frame.size.width, self.view.frame.size.height - 44.0);
+        toVC.view.center = CGPointMake(3 * self.view.center.x * (movingRight ? 1 : -1), toVC.view.center.y);
         
         __weak id <DPSwipeViewControllerDelegate> weakDelegate = self.delegate;
         __weak DPSwipeViewController *weakSelf = self;
@@ -210,7 +211,7 @@ NSInteger const DPScrollableViewTagIdentifier = 0xdeadf00d;
         
         [self transitionFromViewController:fromVC toViewController:toVC duration:duration options:UIViewAnimationOptionTransitionNone animations:^{
             
-            toVC.view.center = fromVC.view.center;
+            toVC.view.center = CGPointMake(weakSelf.view.center.x, toVC.view.center.y);;
             
         } completion:^(BOOL finished) {
             
@@ -218,7 +219,7 @@ NSInteger const DPScrollableViewTagIdentifier = 0xdeadf00d;
             
             if (weakDelegate && [weakDelegate respondsToSelector:@selector(swipeController:didTransitionFromController:withKey:toController:withKey:)])
             {
-                [self.delegate swipeController:self didTransitionFromController:fromVC withKey:fromKey toController:toVC withKey:toKey];
+                [weakSelf.delegate swipeController:weakSelf didTransitionFromController:fromVC withKey:fromKey toController:toVC withKey:toKey];
             }
         }];
     }

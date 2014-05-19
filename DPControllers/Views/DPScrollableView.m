@@ -46,6 +46,7 @@
     _scrollView.decelerationRate = UIScrollViewDecelerationRateFast;
     _scrollView.clipsToBounds = YES;
     _scrollView.delegate = self;
+    _scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     [_scrollView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)]];
     UILongPressGestureRecognizer *longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressTapped:)];
     [_scrollView addGestureRecognizer:longPressGesture];
@@ -454,6 +455,7 @@
     imageView.alpha = 0.0f;
     imageView.tag = 0xbaddad;
     
+    imageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin;
     return imageView;
 }
 
