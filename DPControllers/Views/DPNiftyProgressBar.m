@@ -49,7 +49,7 @@
         
         label = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width - 90.0, 0, 80.0, self.frame.size.height - self.barSize - 2)];
         [self addSubview:label];
-        label.textAlignment = UITextAlignmentRight;
+        label.textAlignment = NSTextAlignmentRight;
         label.backgroundColor = [UIColor clearColor];
         label.textColor = [UIColor blackColor];
         label.font = [UIFont systemFontOfSize:10.0];
@@ -73,6 +73,7 @@
 -(void)setProgressColor:(UIColor *)progressColor {
     _progressColor = progressColor;
     progressView.color = progressColor;
+    [progressView setNeedsDisplay];
 }
 
 -(void)setNumberOfSections:(NSInteger)numberOfSections {
@@ -108,6 +109,11 @@
 }
 
 -(void)setProgress:(float)progress {
+    if(![NSThread isMainThread])
+    {
+        [self performSelectorOnMainThread:@selector(setProgress:) withObject:@(progress) waitUntilDone:YES];
+        return;
+    }
     _progress = progress;
     if(self.showsLabel)
     {
