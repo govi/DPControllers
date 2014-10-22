@@ -120,7 +120,7 @@
             [title drawInRect:textRect withFont:font lineBreakMode:NSLineBreakByTruncatingTail];
             break;
         case DPScrollableViewStyleTextOnly:
-            [title drawCenteredInRect:textRect withFont:font lineBreakMode:NSLineBreakByWordWrapping alignment:NSTextAlignmentCenter];
+            [title drawCenteredInRect:textRect withFont:font lineBreakMode:NSLineBreakByTruncatingTail alignment:NSTextAlignmentCenter];
             break;
         case DPScrollableViewStyleImageOnly:
             [image drawInRect:imageRect];
