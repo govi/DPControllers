@@ -113,11 +113,11 @@
     {
         case DPScrollableViewStyleImageWithCaption:
             [image drawInRect:imageRect];
-            [title drawInRect:textRect withFont:font lineBreakMode:NSLineBreakByTruncatingTail alignment:NSTextAlignmentCenter];
+            [title drawInRect:textRect withFont:font lineBreakMode:NSLineBreakByClipping alignment:NSTextAlignmentCenter];
             break;
         case DPScrollableViewStyleTrailingText:
             [image drawInRect:imageRect];
-            [title drawInRect:textRect withFont:font lineBreakMode:NSLineBreakByTruncatingTail];
+            [title drawInRect:textRect withFont:font lineBreakMode:NSLineBreakByClipping];
             break;
         case DPScrollableViewStyleTextOnly:
             [title drawCenteredInRect:textRect withFont:font lineBreakMode:NSLineBreakByTruncatingTail alignment:NSTextAlignmentCenter];
@@ -126,7 +126,7 @@
             [image drawInRect:imageRect];
             break;
         default:
-            break;
+        break;
     } /* switch */
     
     if(self.separatorColor)

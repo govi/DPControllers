@@ -12,14 +12,13 @@
 
 - (void) drawCenteredInRect:(CGRect)contextRect withFont:(UIFont *)font lineBreakMode:(NSLineBreakMode)lineBreakMode alignment:(NSTextAlignment)alignment
 {
-    CGFloat fontHeight = font.pointSize;
+    CGFloat fontHeight = font.lineHeight + 5.0;
     CGFloat yOffset = (contextRect.size.height - fontHeight) / 2.0;
-
     CGRect textRect = CGRectMake(contextRect.origin.x, contextRect.origin.y + yOffset, contextRect.size.width, fontHeight);
-
-    [self drawInRect:textRect withFont:font lineBreakMode:lineBreakMode
-           alignment:alignment];
+    [self drawInRect:textRect withFont:font lineBreakMode:lineBreakMode alignment:alignment];
 }
+
+
 
 
 @end
