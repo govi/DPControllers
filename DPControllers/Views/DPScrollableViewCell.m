@@ -139,7 +139,18 @@
     }
 }
 
+- (BOOL)isAccessibilityElement
+{
+    return YES;
+}
 
-
+- (NSString *)accessibilityLabel
+{
+    if (self.title.length > 0)
+    {
+        return self.title;
+    }
+    return [super accessibilityLabel];
+}
 
 @end
